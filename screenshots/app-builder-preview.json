@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "THE VØID — Mérida",
+      "hasCanvas": false,
+      "bodyTextLen": 3555,
+      "bodyTextHash": "3eed73ba40db5f9e6c775eb013d3d01c0593dcabc6f38f5991daba3935dfb2df",
+      "bodyTextPrefix": "Saltar al contenido VØID_SYSTEM / BOOT Omitir > VØID_SYSTEM MÉRI",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "THE VØID — Entra al vacío · Mérida",
+      "hasCanvas": false,
+      "bodyTextLen": 3514,
+      "bodyTextHash": "1480d081315b688fca47d64604b6a69f2db65c0077e5fdb8d480ba273ff196e0",
+      "bodyTextPrefix": "Saltar al contenido VØID_SYSTEM / BOOT Omitir > VØID_SYSTEM MÉRI",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

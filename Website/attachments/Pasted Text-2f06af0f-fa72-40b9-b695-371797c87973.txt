@@ -1,0 +1,290 @@
+THE VØID — OFFICIAL WEBSITE
+
+Act as a world-class creative director, digital art director, UX/UI designer, and senior full-stack web developer.
+
+Design and build the official website for THE VØID, an underground electronic music collective and event promoter based in Mérida, Yucatán, Mexico.
+
+The website must feel like entering an unstable digital dimension, an underground transmission, or a classified system that has been corrupted by an unknown signal. This is not a conventional nightlife website. It is a digital extension of the THE VØID universe.
+
+1. BRAND IDENTITY
+
+Brand name: THE VØID
+
+Location: Mérida, Yucatán, Mexico.
+
+Music genres:
+
+- Techno
+- Hard Techno
+- Hard Bounce
+- Hard Groove
+- Schranz
+- Industrial Techno
+
+Brand personality:
+
+- Dark
+- Futuristic
+- Industrial
+- Underground
+- Intense
+- Experimental
+- Immersive
+- Mysterious
+- Technologically corrupted
+
+Core concept:
+THE VØID is more than an event promoter. It is a recurring underground experience built around sound, physical energy, audiovisual immersion, and the feeling of entering another dimension.
+
+The music must feel powerful, relentless, and physical. Do not position the brand around melodic techno, commercial EDM, or generic festival culture.
+
+2. VISUAL DIRECTION
+
+Create a premium, cinematic, brutalist digital interface combining:
+
+- Obsidian-black backgrounds.
+- High-contrast white typography.
+- Acid green or cold electric-green accents used selectively.
+- Metallic textures, digital noise, signal interference, scanlines, and corrupted interfaces.
+- Brutalist typography, oversized condensed headlines, and monospaced system text.
+- Abstract 3D voids, dimensional portals, industrial architecture, and atmospheric darkness.
+- Glitch effects that feel intentional, sophisticated, and technologically plausible.
+- Minimal but powerful animations triggered by scrolling, hovering, and navigation.
+
+Reference the visual atmosphere of underground techno culture, experimental digital art, cyberpunk interfaces, industrial architecture, and high-end electronic music campaigns.
+
+Avoid generic nightclub templates, purple-and-blue neon gradients, stock photos of DJs, generic skulls, blood, cobwebs, and overused Halloween graphics.
+
+The design should feel custom-built for THE VØID.
+
+3. HOMEPAGE EXPERIENCE
+
+A. SYSTEM BOOT SEQUENCE
+
+On the first visit, display a short, skippable boot sequence.
+
+Example terminal text:
+
+VØID_SYSTEM
+INITIALIZING TRANSMISSION...
+SIGNAL DETECTED
+REALITY STATUS: UNSTABLE
+CONNECTION ESTABLISHED
+
+Transition into the homepage with a subtle visual distortion.
+
+Keep the sequence brief and provide a skip option. Do not block access to the website or interfere with mobile usability.
+
+B. HERO SECTION
+
+Create a full-screen, immersive hero section.
+
+Display the THE VØID wordmark prominently, with a subtle distortion or displacement effect.
+
+Main headline:
+
+ENTER THE VOID.
+
+Supporting text:
+
+ONE FREQUENCY.
+NO ESCAPE.
+
+Alternative system text:
+
+VØID_SYSTEM / STATUS: UNSTABLE
+
+The background should feature a dark dimensional environment, abstract portal, industrial space, or atmospheric audiovisual installation. Use restrained motion and depth rather than excessive visual effects.
+
+Primary button: EXPLORE EVENTS
+
+Secondary button: ENTER THE ARCHIVE
+
+Include a discreet location indicator:
+
+MÉRIDA, YUCATÁN, MX
+
+C. NEXT TRANSMISSION / UPCOMING EVENTS
+
+Create a striking upcoming-events section styled as a transmission database.
+
+Each event must have:
+
+- Event artwork.
+- Event name.
+- Date and venue.
+- City.
+- Artist lineup.
+- Music genres.
+- Ticket availability or status.
+- A clear ticket-purchase button.
+
+Use event statuses such as:
+
+TRANSMISSION CONFIRMED
+TICKETS AVAILABLE
+LOW FREQUENCY / LIMITED CAPACITY
+TRANSMISSION ENDED
+
+Only display statuses that match actual event data.
+
+Make event cards visually distinctive, with dark artwork, precise typography, subtle glitch transitions, and strong hierarchy.
+
+Build the section so new events can be added without redesigning the website.
+
+Use configurable event data rather than hardcoding every event into the layout.
+
+D. THE PHILOSOPHY
+
+Headline:
+
+NOT JUST MUSIC.
+A DIFFERENT STATE OF EXISTENCE.
+
+Describe THE VØID as an underground platform dedicated to pushing the boundaries of electronic music through intense sound, carefully curated lineups, immersive production, and unconventional spaces.
+
+Emphasize the relationship between sound pressure, darkness, architecture, movement, and collective energy.
+
+Keep the copy concise, confident, and mysterious. Avoid corporate marketing language.
+
+E. THE SOUND
+
+Build a visual section dedicated to the musical identity of THE VØID.
+
+Feature the genres:
+
+HARD TECHNO / SCHRANZ / INDUSTRIAL / HARD BOUNCE / HARD GROOVE
+
+Use kinetic typography, waveform-inspired graphics, audio-reactive visual concepts where technically feasible, and a modular visual layout.
+
+If music is embedded, make playback user-controlled. Never autoplay loud audio.
+
+F. EVENT ARCHIVE
+
+Create a searchable or filterable archive of previous events.
+
+Include:
+
+- Event flyers and posters.
+- Artist lineups.
+- Dates and locations.
+- Photography and video recaps.
+- Short descriptions.
+- Links to relevant social media content.
+
+Allow visitors to explore the evolution of THE VØID as a collective and event series.
+
+The archive should feel like classified records recovered from previous transmissions.
+
+G. MEDIA / VISUAL TRANSMISSIONS
+
+Create an immersive media gallery for DJ sets, event recaps, audiovisual experiments, and location recordings.
+
+Support embedded YouTube videos, Instagram content, and other compatible media.
+
+Use cinematic thumbnails and clean playback interfaces. Avoid automatically loading large videos or slowing down the website.
+
+H. JOIN THE FREQUENCY
+
+Create a section inviting visitors to connect with THE VØID.
+
+Headline:
+
+THE SIGNAL DOES NOT END HERE.
+
+Include links to:
+
+- Instagram
+- TikTok
+- WhatsApp community, if available.
+- Ticketing platform.
+- Email contact for bookings, collaborations, and partnerships.
+
+Use the actual official URLs provided by the administrator. Do not invent links or social profiles.
+
+4. NAVIGATION
+
+Create a minimal navigation system:
+
+THE VØID — Home
+TRANSMISSIONS — Upcoming events
+ARCHIVE — Past events
+SIGNAL — Media
+CONTACT — Bookings and collaborations
+
+The navigation should remain minimal, with an immersive full-screen menu on mobile if appropriate.
+
+5. TYPOGRAPHY AND MICROINTERACTIONS
+
+Use a distinctive combination of:
+
+- Bold condensed display typography.
+- Monospaced system typography.
+- Minimal supporting text.
+
+Possible references include the visual character of Space Grotesk, IBM Plex Mono, and condensed industrial display fonts. Select fonts with appropriate licenses and good performance.
+
+Add subtle hover distortion, cursor-responsive effects where appropriate, animated system labels, and smooth transitions.
+
+Prioritize readability over visual gimmicks.
+
+6. TECHNICAL REQUIREMENTS
+
+Build a production-ready, responsive website.
+
+Requirements:
+
+- Mobile-first design.
+- Excellent performance and Core Web Vitals.
+- Semantic HTML and accessibility.
+- Keyboard-accessible navigation.
+- Reduced-motion support.
+- Optimized WebP or AVIF images.
+- Lazy loading for below-the-fold media.
+- SEO metadata and Open Graph social-sharing images.
+- Structured event data where appropriate.
+- A configurable system for adding and editing events.
+- Clear external ticket links.
+- Analytics integration ready for Google Analytics or Meta Pixel, subject to consent and applicable privacy requirements.
+- Cookie and privacy controls where required.
+- Secure contact form with spam protection.
+- No fake purchase buttons, placeholder links presented as real, or invented event information.
+
+Use a maintainable modern frontend framework and clean component architecture. If a backend or database is required, explain and implement the appropriate integration rather than simulating functionality.
+
+The site should be deployable to a real hosting provider with clear setup instructions.
+
+7. CONVERSION STRATEGY
+
+The main objective is to convert visitors into ticket buyers and build a recognizable regional underground electronic music brand.
+
+Priorities:
+
+1. Make upcoming events immediately discoverable.
+2. Drive visitors to the official ticketing platform.
+3. Showcase the artistic identity and production quality of THE VØID.
+4. Build a media archive that increases credibility.
+5. Grow the community and social following.
+6. Support future expansion beyond Mérida.
+
+Do not sacrifice usability or ticket conversions for unnecessary animations.
+
+8. BILINGUAL EXPERIENCE
+
+Implement Spanish as the default language, with an English language toggle.
+
+The English version should be professionally adapted for international visitors, expats, and exchange students in Yucatán, not merely translated word for word.
+
+Keep event dates, ticket prices, artist names, and availability synchronized across both languages.
+
+9. FINAL CREATIVE DIRECTION
+
+The final result should feel like a combination of an underground techno institution, a classified digital system, an experimental audiovisual art project, and a premium international electronic music brand.
+
+It should be visually unforgettable without feeling cluttered.
+
+The site must communicate that THE VØID is an experience to enter, not merely an event to attend.
+
+Do not return only a design concept or a static mockup. Build the actual functional website, test the responsive layouts and navigation, and identify any external integrations that require credentials or configuration.
+
+Begin by establishing the complete visual system and homepage, then build the remaining sections using the same coherent design language.

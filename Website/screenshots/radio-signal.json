@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/signal",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "THE VØID — Mérida",
+      "hasCanvas": false,
+      "bodyTextLen": 2251,
+      "bodyTextHash": "e34ad15f12773b5055f8f05fe09101134c04d7439c70369ce6b2db4ee766986f",
+      "bodyTextPrefix": "Saltar al contenido TRANSMISIONES ARCHIVO SEÑAL CONTACTO --:--:-",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/radio-signal.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Señal — THE VØID",
+      "hasCanvas": false,
+      "bodyTextLen": 2298,
+      "bodyTextHash": "4ae136fe873a859fd52214fd3c91e25774ac74b65ffc3d67f52d94c2256d7f91",
+      "bodyTextPrefix": "Saltar al contenido VØID_SYSTEM / BOOT Omitir > VØID_SYSTEM > IN",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/radio-signal-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/radio-signal.json"
+}

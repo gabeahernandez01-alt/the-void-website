@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/history",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "THE VØID — Mérida",
+      "hasCanvas": false,
+      "bodyTextLen": 6644,
+      "bodyTextHash": "1de2aa054661c194cdd5ce1a3a2c4e6d88ebd6d0519a14fd2af786882b4925ae",
+      "bodyTextPrefix": "Saltar al contenido TRANSMISIONES ARCHIVO SEÑAL HISTORIA CONTACT",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/history.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Historia del techno — THE VØID",
+      "hasCanvas": false,
+      "bodyTextLen": 6588,
+      "bodyTextHash": "c71b2d6444b9368fe8466abc55e5d7edb58391b7fa7102fad3c78cac2f248efd",
+      "bodyTextPrefix": "Saltar al contenido VØID_SYSTEM / BOOT Omitir > VØID_SYSTEM MÉRI",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/history-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/history.json"
+}

@@ -1,0 +1,42 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "THE VØID — Mérida",
+      "hasCanvas": false,
+      "bodyTextLen": 3498,
+      "bodyTextHash": "384a61768f22a6062091b70a1db2fd992ad282820d3a5ac5e79362f56f98f571",
+      "bodyTextPrefix": "Saltar al contenido TRANSMISIONES ARCHIVO SEÑAL CONTACTO --:--:-",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "THE VØID — Mérida",
+      "hasCanvas": false,
+      "bodyTextLen": 3457,
+      "bodyTextHash": "5cda1dc6ae6d5a7f38b46ac565397d5671cd83ef52d8cae3ec25b129bcaf74b9",
+      "bodyTextPrefix": "Saltar al contenido ES EN Abrir menú VØID_SYSTEM / STATUS: UNSTA",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text replaced (similar length, page start changed)",
+    "mobile: title changed (\"THE VØID — Entra al vacío · Mérida\" -> \"THE VØID — Mérida\")",
+    "mobile: body text replaced (similar length, page start changed)"
+  ]
+}
