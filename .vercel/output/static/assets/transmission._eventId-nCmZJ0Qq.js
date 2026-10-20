@@ -1,1 +1,0 @@
-import{C as e,i as t,t as n}from"./index-D6d4KWHt.js";var r=e(),i=function(){let e=n.useLoaderData();return(0,r.jsx)(t,{event:e})};export{i as component};
