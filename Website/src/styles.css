@@ -1,12 +1,12 @@
 @import "tailwindcss";
-@import "../node_modules/@fontsource/big-shoulders-display/latin-500.css";
-@import "../node_modules/@fontsource/big-shoulders-display/latin-ext-500.css";
-@import "../node_modules/@fontsource/big-shoulders-display/latin-700.css";
-@import "../node_modules/@fontsource/big-shoulders-display/latin-ext-700.css";
-@import "../node_modules/@fontsource/ibm-plex-mono/latin-400.css";
-@import "../node_modules/@fontsource/ibm-plex-mono/latin-ext-400.css";
-@import "../node_modules/@fontsource/ibm-plex-mono/latin-500.css";
-@import "../node_modules/@fontsource/ibm-plex-mono/latin-ext-500.css";
+@import "@fontsource/big-shoulders-display/latin-500";
+@import "@fontsource/big-shoulders-display/latin-ext-500";
+@import "@fontsource/big-shoulders-display/latin-700";
+@import "@fontsource/big-shoulders-display/latin-ext-700";
+@import "@fontsource/ibm-plex-mono/latin-400";
+@import "@fontsource/ibm-plex-mono/latin-ext-400";
+@import "@fontsource/ibm-plex-mono/latin-500";
+@import "@fontsource/ibm-plex-mono/latin-ext-500";
 
 @theme {
   --font-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
