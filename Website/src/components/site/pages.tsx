@@ -353,6 +353,7 @@ export function EventPage({ event }: { event: EventRecord }) {
             </div>
           </div>
         </div>
+        </article>
       {event.gallery && event.gallery.length > 0 && (
         <section className="page-pad pb-16">
           <p className="font-mono text-xs uppercase tracking-widest text-acid">
