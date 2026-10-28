@@ -153,11 +153,11 @@ export const events: EventRecord[] = [
     age: "18+",
     image: "/media/events/oo1/cover.webp",
     gallery: [
-  "/media/events/oo1/gallery-01.webp",
-  "/media/events/oo1/gallery-02.webp",
-  "/media/events/oo1/gallery-03.webp",
-  "/media/events/oo1/gallery-04.webp",
-  "/media/events/oo1/gallery-05.webp",
+  "/media/events/oo1/oo1/gallery-01.webp",
+  "/media/events/oo1/oo1/gallery-02.webp",
+  "/media/events/oo1/oo1/gallery-03.webp",
+  "/media/events/oo1/oo1/gallery-04.webp",
+  "/media/events/oo1/oo1/gallery-05.webp",
 ],
     summary: {
       es: "La primera transmisión. THE VØID y Rave-U abren la frecuencia en Foro Casa Nohoch: techno, acid, hard, industrial, schranz y hardcore. Cupo limitado.",
@@ -253,11 +253,11 @@ export const events: EventRecord[] = [
     status: "ended",
     image: "/media/events/oo3/cover.webp",
     gallery: [
-  "/media/events/oo3/gallery-01.webp",
-  "/media/events/oo3/gallery-02.webp",
-  "/media/events/oo3/gallery-03.webp",
-  "/media/events/oo3/gallery-04.webp",
-  "/media/events/oo3/gallery-05.webp",
+  "/media/events/oo3/oo3/gallery-01.webp",
+  "/media/events/oo3/oo3/gallery-02.webp",
+  "/media/events/oo3/oo3/gallery-03.webp",
+  "/media/events/oo3/oo3/gallery-04.webp",
+  "/media/events/oo3/oo3/gallery-05.webp",
 ],
     summary: {
       es: "Después de Transmission la señal no se detuvo: se volvió interna. Primera fecha oficial del año, techno y hard techno sin traducción suave.",
