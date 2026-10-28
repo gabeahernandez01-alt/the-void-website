@@ -151,7 +151,7 @@ export const events: EventRecord[] = [
     status: "ended",
     priceMxn: 150,
     age: "18+",
-    image: "/media/events/oo1/cover.webp",
+    image: "/media/events/oo1/oo1/cover.webp",
     gallery: [
   "/media/events/oo1/oo1/gallery-01.webp",
   "/media/events/oo1/oo1/gallery-02.webp",
@@ -251,7 +251,7 @@ export const events: EventRecord[] = [
     artists: ["BRI", "ERIC SOSA", "FRENCHIE EL TIEZO", "JHAXIE", "MËADE"],
     genres: ["Techno", "Hard Techno", "Schranz", "Hard Bounce", "Industrial", "Acid"],
     status: "ended",
-    image: "/media/events/oo3/cover.webp",
+    image: "/media/events/oo3/oo3/cover.webp",
     gallery: [
   "/media/events/oo3/oo3/gallery-01.webp",
   "/media/events/oo3/oo3/gallery-02.webp",
