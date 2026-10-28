@@ -14,6 +14,7 @@ export type EventLink = { label: string; href: string };
 export type EventRecord = {
   id: string;
   name: string;
+  gallery?: string[];
   /** ISO 8601 with Mexico offset. Noon anchor when the clock time was not published. */
   start: string;
   end?: string;
@@ -150,7 +151,14 @@ export const events: EventRecord[] = [
     status: "ended",
     priceMxn: 150,
     age: "18+",
-    image: "/media/night-trees.webp",
+    image: "/media/events/oo1/cover.webp",
+    gallery: [
+  "/media/events/oo1/gallery-01.webp",
+  "/media/events/oo1/gallery-02.webp",
+  "/media/events/oo1/gallery-03.webp",
+  "/media/events/oo1/gallery-04.webp",
+  "/media/events/oo1/gallery-05.webp",
+],
     summary: {
       es: "La primera transmisión. THE VØID y Rave-U abren la frecuencia en Foro Casa Nohoch: techno, acid, hard, industrial, schranz y hardcore. Cupo limitado.",
       en: "The first transmission. THE VØID and Rave-U open the frequency at Foro Casa Nohoch — techno, acid, hard, industrial, schranz and hardcore. Limited capacity.",
@@ -243,7 +251,14 @@ export const events: EventRecord[] = [
     artists: ["BRI", "ERIC SOSA", "FRENCHIE EL TIEZO", "JHAXIE", "MËADE"],
     genres: ["Techno", "Hard Techno", "Schranz", "Hard Bounce", "Industrial", "Acid"],
     status: "ended",
-    image: "/media/dj-profile.webp",
+    image: "/media/events/oo3/cover.webp",
+    gallery: [
+  "/media/events/oo3/gallery-01.webp",
+  "/media/events/oo3/gallery-02.webp",
+  "/media/events/oo3/gallery-03.webp",
+  "/media/events/oo3/gallery-04.webp",
+  "/media/events/oo3/gallery-05.webp",
+],
     summary: {
       es: "Después de Transmission la señal no se detuvo: se volvió interna. Primera fecha oficial del año, techno y hard techno sin traducción suave.",
       en: "After Transmission the signal did not stop — it turned inward. First official date of the year. Techno and hard techno with nothing softened.",
