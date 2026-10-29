@@ -20,15 +20,18 @@ export type EventRecord = {
   timeKnown: boolean;
   venue: string;
   address?: string;
-  city: string;
+  city?: string;
   artists: string[];
   artistNote?: LocaleText;
   genres: string[];
   status: TicketStatus;
   ticketUrl?: string;
   priceMxn?: number;
+  access?: LocaleText;
   summary: LocaleText;
-  image: string;
+  image?: string;
+  imagePresentation?: "portrait";
+  imageAlt?: LocaleText;
   links: EventLink[];
   age?: string;
   production?: string[];
@@ -60,21 +63,21 @@ export type RadioVideo = {
 /** Published on THE VOID RADIO. Order matches the channel feed. */
 export const radio: RadioVideo[] = [
   {
-    id: "HFD78JpZc9A",
-    title: "GATES OF XIBALBA II — HARDGROOVE SET",
-    series: "GATES OF XIBALBA",
+    id: "1le-Mv1MB8Q",
+    title: "THE VØID — ANNIVERSARY AFTERMOVIE 2026 | MÉRIDA, YUCATÁN",
+    series: "THE VØID ANNIVERSARY",
     caption: {
-      es: "Sabina Palma. Hardgroove grabado en un cenote de Homún, Yucatán.",
-      en: "Sabina Palma. Hardgroove recorded in a cenote in Homún, Yucatán.",
+      es: "Aftermovie del primer aniversario de THE VØID en Mérida, Yucatán.",
+      en: "Aftermovie from THE VØID’s first anniversary in Mérida, Yucatán.",
     },
   },
   {
-    id: "xeqFQkqFeWQ",
-    title: "GATES OF XIBALBA I — TECHNO DJ SET",
-    series: "GATES OF XIBALBA",
+    id: "mXN6idrkWlU",
+    title: "BRI — SCHRANZ SET | THE VØID ANNIVERSARY | MÉRIDA, MX.",
+    series: "THE VØID ANNIVERSARY",
     caption: {
-      es: "TRKO. Hard techno grabado en un cenote de Homún, Yucatán.",
-      en: "TRKO. Hard techno recorded in a cenote in Homún, Yucatán.",
+      es: "Set de schranz de BRI durante el aniversario de THE VØID en Mérida.",
+      en: "BRI’s schranz set from THE VØID anniversary in Mérida.",
     },
   },
   {
@@ -352,6 +355,49 @@ export const events: EventRecord[] = [
         href: "https://www.instagram.com/thevoid_mid/p/DeC_kL-JRe8/",
       },
     ],
+  },
+  {
+    id: "xmatkuil-2026",
+    name: "XMATKUIL",
+    start: "2026-11-14T21:00:00-06:00",
+    timeKnown: true,
+    venue: "Escenario Raventón · Ex-Teatro del Pueblo",
+    address: "Ex-Teatro del Pueblo, Feria Internacional de Yucatán Xmatkuil",
+    city: "Xmatkuil",
+    artists: ["GABY SILVA", "MIKA", "BRI", "RUNTIME TERROR"],
+    genres: [],
+    status: "confirmed",
+    access: { es: "Gratuito", en: "Free entry" },
+    image: "/media/xmatkuil-2026.jpg",
+    imagePresentation: "portrait",
+    imageAlt: {
+      es: "Flyer de THE VØID en el escenario Raventón, Ex-Teatro del Pueblo, Feria de Xmatkuil; 14 de noviembre a las 9 p. m., con Gaby Silva, MIKA, BRI y Runtime Terror.",
+      en: "THE VØID flyer for the Raventón stage at Ex-Teatro del Pueblo, Xmatkuil Fair; 14 November at 9 p.m., with Gaby Silva, MIKA, BRI and Runtime Terror.",
+    },
+    summary: {
+      es: "Una transmisión abierta para todos. THE VØID llega a la Feria Internacional de Yucatán en Xmatkuil. Entrada gratuita.",
+      en: "An open transmission for everyone. THE VØID arrives at the Yucatán International Fair in Xmatkuil. Free entry.",
+    },
+    links: [],
+  },
+  {
+    id: "unknown-2026",
+    name: "UNKNOWN",
+    start: "2026-12-05T12:00:00-06:00",
+    timeKnown: false,
+    venue: "UNKNOWN",
+    artists: [],
+    artistNote: {
+      es: "Todavía no podemos revelar los nombres.",
+      en: "We cannot reveal the names yet.",
+    },
+    genres: [],
+    status: "confirmed",
+    summary: {
+      es: "Una fecha que no será como las demás. No podemos revelar demasiado todavía; solo podemos decir que estamos preparando algo muy especial. Nos encontramos en lo desconocido.",
+      en: "A date unlike the others. We cannot reveal too much yet; all we can say is that we are preparing something very special. We meet in the unknown.",
+    },
+    links: [],
   },
 ];
 

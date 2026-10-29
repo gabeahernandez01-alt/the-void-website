@@ -9,6 +9,7 @@ import { VideoCard } from "@/components/site/radio";
 import { displayStatus, eventJsonLd, formatWhen, jsonScript, listArchive, listUpcoming } from "@/lib/events";
 import { useDocTitle, useI18n } from "@/lib/i18n";
 import { contactInbox, sendContact } from "@/lib/contact";
+import { cn } from "@/lib/utils";
 
 function PageIntro({ kicker, title, lede }: { kicker: string; title: string; lede: string }) {
   return (
@@ -27,8 +28,8 @@ export function TransmissionsPage() {
   const next = upcoming[0];
   const lede =
     lang === "es"
-      ? "La próxima puerta. El botón de boletos aparece solo si existe un enlace oficial."
-      : "The next door. A ticket button appears only when an official link exists.";
+      ? "Dos fechas. Dos transmisiones distintas. La señal ya tiene nuevas coordenadas. Guarda las fechas: lo que viene apenas comienza."
+      : "Two dates. Two different transmissions. The signal has new coordinates. Save the dates. What comes next is only the beginning.";
 
   return (
     <>
@@ -38,11 +39,23 @@ export function TransmissionsPage() {
       <PageIntro kicker="VØID_SYSTEM / TX" title={t("navTransmissions")} lede={lede} />
       <div className="page-pad pb-24">
         {next ? (
-          <div className="grid gap-4">
-            <Countdown iso={next.start} />
-            {upcoming.map((event, index) => (
-              <EventCard key={event.id} event={event} featured={index === 0} />
-            ))}
+          <div className="grid gap-8">
+            {upcoming.map((event, index) => {
+              const when = formatWhen(event.start, lang, event.timeKnown);
+              return (
+                <section key={event.id} className="grid gap-4">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-acid">
+                      VØID_SYSTEM / {event.name} · {when.stamp}
+                    </p>
+                    <div className="mt-3 max-w-2xl">
+                      <Countdown iso={event.start} />
+                    </div>
+                  </div>
+                  <EventCard event={event} featured={index === 0} />
+                </section>
+              );
+            })}
           </div>
         ) : (
           <div className="border border-line p-6">
@@ -308,13 +321,26 @@ export function EventPage({ event }: { event: EventRecord }) {
           {t("back")}
         </Link>
         <div className="mt-6 grid gap-8 lg:grid-cols-12">
-          <img
-            src={event.image}
-            alt=""
-            width={1200}
-            height={1600}
-            className="poster w-full object-cover lg:col-span-5"
-          />
+          {event.image ? (
+            <img
+              src={event.image}
+              alt={event.imageAlt?.[lang] ?? ""}
+              width={1200}
+              height={1600}
+              className={cn(
+                "w-full lg:col-span-5",
+                event.imagePresentation === "portrait"
+                  ? "aspect-[2/3] bg-bg object-contain"
+                  : "poster object-cover",
+              )}
+            />
+          ) : (
+            <div className="poster flex flex-col justify-between bg-surface p-5 sm:p-8 lg:col-span-5">
+              <p className="font-mono text-xs uppercase tracking-widest text-acid">VØID_SYSTEM / TX</p>
+              <p className="font-display text-5xl uppercase sm:text-7xl">{event.name}</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted">{t("flyerPending")}</p>
+            </div>
+          )}
           <div className="lg:col-span-7">
             <StatusMark event={event} />
             <h1 className="mt-3 font-display text-5xl uppercase sm:text-7xl">{event.name}</h1>
@@ -325,7 +351,8 @@ export function EventPage({ event }: { event: EventRecord }) {
                 [t("when"), `${when.day}${when.time ? ` · ${when.time}` : ""}${end?.time ? ` — ${end.time}` : ""}`],
                 [t("venue"), event.address ?? event.venue],
                 [t("artists"), event.artists.length ? event.artists.join(" · ") : event.artistNote?.[lang] ?? "—"],
-                [t("genres"), event.genres.join(" · ")],
+                ...(event.genres.length ? [[t("genres"), event.genres.join(" · ")]] : []),
+                ...(event.access ? [[t("access"), event.access[lang]]] : []),
                 ...(event.age ? [[t("age"), event.age]] : []),
                 ...(event.production ? [[t("production"), event.production.join(" · ")]] : []),
                 ...(event.priceMxn ? [[t("price"), `MXN ${event.priceMxn}`]] : []),

@@ -86,17 +86,20 @@ export function eventJsonLd(event: EventRecord) {
         : "https://schema.org/EventScheduled",
     description: event.summary.es,
     inLanguage: ["es", "en"],
-    location: {
-      "@type": "Place",
-      name: event.venue,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: event.address ?? event.venue,
-        addressLocality: "Mérida",
-        addressRegion: "Yucatán",
-        addressCountry: "MX",
-      },
-    },
+    location:
+      event.venue === "UNKNOWN"
+        ? undefined
+        : {
+            "@type": "Place",
+            name: event.venue,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: event.address ?? event.venue,
+              addressLocality: event.city ?? "Mérida",
+              addressRegion: "Yucatán",
+              addressCountry: "MX",
+            },
+          },
     organizer: {
       "@type": "Organization",
       name: "THE VØID",

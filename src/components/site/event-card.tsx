@@ -38,6 +38,7 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
       : event.ticketUrl?.includes("shows.link")
         ? t("viaShow")
         : null;
+  const location = [event.venue, event.city].filter((place): place is string => Boolean(place)).join(" · ");
 
   return (
     <article className={cn("group border border-line bg-dim", featured && "md:grid md:grid-cols-12")}>
@@ -46,14 +47,27 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
         params={{ eventId: event.id }}
         className={cn("relative block overflow-hidden", featured ? "md:col-span-6" : "")}
       >
-        <img
-          src={event.image}
-          alt=""
-          width={1200}
-          height={1600}
-          className="poster w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
-          loading={featured ? "eager" : "lazy"}
-        />
+        {event.image ? (
+          <img
+            src={event.image}
+            alt={event.imageAlt?.[lang] ?? ""}
+            width={1200}
+            height={1600}
+            className={cn(
+              "w-full motion-safe:transition-transform motion-safe:duration-500",
+              event.imagePresentation === "portrait"
+                ? "aspect-[2/3] bg-bg object-contain"
+                : "poster object-cover motion-safe:group-hover:scale-105",
+            )}
+            loading={featured ? "eager" : "lazy"}
+          />
+        ) : (
+          <div className="poster flex flex-col justify-between bg-surface p-5 sm:p-8">
+            <p className="font-mono text-xs uppercase tracking-widest text-acid">VØID_SYSTEM / TX</p>
+            <p className="font-display text-5xl uppercase sm:text-7xl">{event.name}</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-muted">{t("flyerPending")}</p>
+          </div>
+        )}
         <span className="absolute left-3 top-3 bg-bg/80 px-2 py-1 font-mono text-xs tracking-widest text-acid">
           {when.stamp}
         </span>
@@ -67,8 +81,7 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
             </Link>
           </h2>
           <p className="mt-3 font-mono text-xs uppercase tracking-widest text-muted">
-            {when.day}
-            {when.time ? ` · ${when.time}` : ""} · {event.venue} · {event.city}
+            {when.day}{when.time ? ` · ${when.time}` : ""} · {location}
           </p>
         </div>
         <p className="max-w-xl text-sm text-muted">{event.summary[lang]}</p>
@@ -79,13 +92,15 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
         ) : (
           event.artistNote && <p className="text-sm text-muted">{event.artistNote[lang]}</p>
         )}
-        <ul className="flex flex-wrap gap-2">
-          {event.genres.map((genre) => (
-            <li key={genre} className="border border-line px-2 py-1 font-mono text-xs uppercase tracking-widest text-muted">
-              {genre}
-            </li>
-          ))}
-        </ul>
+        {event.genres.length > 0 && (
+          <ul className="flex flex-wrap gap-2">
+            {event.genres.map((genre) => (
+              <li key={genre} className="border border-line px-2 py-1 font-mono text-xs uppercase tracking-widest text-muted">
+                {genre}
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="mt-2 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
           {canBuy && event.ticketUrl ? (
             <a className={buttonClass("solid", "w-full sm:w-auto")} href={event.ticketUrl} target="_blank" rel="noopener noreferrer">

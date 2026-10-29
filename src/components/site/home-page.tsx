@@ -42,7 +42,8 @@ function Waveform() {
 export function HomePage() {
   const { t, lang } = useI18n();
   useDocTitle(t("homeTitle"));
-  const next = listUpcoming()[0];
+  const upcoming = listUpcoming();
+  const next = upcoming[0];
   const recent = listArchive().slice(0, 4);
   const nextWhen = next ? formatWhen(next.start, lang, next.timeKnown) : null;
   const org = {
@@ -148,8 +149,26 @@ export function HomePage() {
       </section>
 
       <section className="page-pad py-16 xl:py-24">
-        {next ? (
-          <EventCard event={next} featured />
+        {upcoming.length > 0 ? (
+          <div className="grid gap-8">
+            {next && <EventCard event={next} featured />}
+            {upcoming.slice(1, 2).map((event) => {
+              const when = formatWhen(event.start, lang, event.timeKnown);
+              return (
+                <div key={event.id} className="grid gap-4">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-acid">
+                      VØID_SYSTEM / {event.name} · {when.stamp}
+                    </p>
+                    <div className="mt-3 max-w-2xl">
+                      <Countdown iso={event.start} />
+                    </div>
+                  </div>
+                  <EventCard event={event} />
+                </div>
+              );
+            })}
+          </div>
         ) : (
           <div className="border border-line p-6">
             <p className="max-w-xl text-muted">{t("emptyBody")}</p>
