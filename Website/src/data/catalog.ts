@@ -393,7 +393,7 @@ gallery: [
   "/media/events/Aniversario/DJ%20en%20fiesta%20bajo%20luces%20rojas.png",
   "/media/events/Aniversario/DJ%20en%20perfil%20ante%20una%20pista%20iluminada.png",
   "/media/events/Aniversario/DJ%20entre%20luces%20doradas%20y%20humo.png",
-  "/media/events/Aniversario/Fiesta%20clandestina%20entre%20luces%20ámbar.png",
+  "/media/events/Aniversario/Fiesta%20clandestina%20entre%20luces%20ambar.png",
   "/media/events/Aniversario/Fiesta%20nocturna%20bajo%20luces%20rojas.png",
   "/media/events/Aniversario/Fiesta%20Nocturna%20con%20Abanico%20Iridiscente.png",
   "/media/events/Aniversario/imagen_16x9_2k.png",
