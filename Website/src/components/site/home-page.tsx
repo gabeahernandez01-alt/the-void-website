@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Pause, Play } from "lucide-react";
 import { buttonClass } from "@/components/ui/button";
 import { Countdown, EventCard } from "@/components/site/event-card";
 import { facebookUrl, instagramUrl, radio, soundGenres, tiktokUrl, youtubeUrl } from "@/data/catalog";
@@ -11,7 +13,7 @@ const STRIP = [
   "/media/room-wide.webp",
   "/media/booth-mask.webp",
   "/media/decks-white.webp",
-  "/media/floor-close.webp",
+  "/media/booth-amber.webp",
   "/media/red-haze.webp",
   "/media/beams.webp",
   "/media/void-booth.webp",
@@ -41,6 +43,7 @@ function Waveform() {
 
 export function HomePage() {
   const { t, lang } = useI18n();
+  const [photoStripPaused, setPhotoStripPaused] = useState(false);
   useDocTitle(t("homeTitle"));
   const upcoming = listUpcoming();
   const next = upcoming[0];
@@ -129,23 +132,53 @@ export function HomePage() {
         </div>
       </section>
 
-      <section aria-label={lang === "es" ? "Archivo fotográfico" : "Photo archive"} className="border-y border-line">
-        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8">
-          {STRIP.map((src, index) => (
-            <img
-              key={src}
-              src={src}
-              alt=""
-              width={800}
-              height={450}
-              className={cn(
-                "aspect-[4/5] w-full object-cover xl:aspect-[3/4]",
-                index > 3 && "hidden md:block",
-              )}
-              loading="lazy"
-            />
+      <section
+        role="group"
+        aria-label={lang === "es" ? "Galería de fotos de eventos" : "Event photo gallery"}
+        className="photo-strip relative overflow-hidden border-y border-line"
+      >
+        <div
+          className={cn("photo-marquee-track flex w-max", photoStripPaused && "photo-marquee-paused")}
+          aria-hidden="true"
+        >
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              className={cn("photo-strip-group flex shrink-0", copy === 1 && "motion-reduce:hidden")}
+              aria-hidden={copy === 1}
+            >
+              {STRIP.map((src, index) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt=""
+                  width={800}
+                  height={1000}
+                  className="photo-strip-image block object-cover"
+                  style={{ animationDelay: `${-index * 2}s` }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ))}
+            </div>
           ))}
         </div>
+        <button
+          type="button"
+          className="photo-strip-control absolute right-3 top-3 z-10 inline-flex size-11 items-center justify-center border border-white/20 bg-bg/85 text-fg backdrop-blur-sm hover:text-acid"
+          aria-label={
+            photoStripPaused
+              ? lang === "es"
+                ? "Reanudar movimiento de fotos"
+                : "Resume photo motion"
+              : lang === "es"
+                ? "Pausar movimiento de fotos"
+                : "Pause photo motion"
+          }
+          onClick={() => setPhotoStripPaused((paused) => !paused)}
+        >
+          {photoStripPaused ? <Play size={16} aria-hidden="true" /> : <Pause size={16} aria-hidden="true" />}
+        </button>
       </section>
 
       <section className="page-pad py-16 xl:py-24">

@@ -73,6 +73,64 @@
   animation: void-marquee 32s linear infinite;
 }
 
+@keyframes photo-glitch {
+  0%,
+  96%,
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  96.2% {
+    opacity: 0.84;
+    transform: translate3d(-1px, 0, 0);
+  }
+  96.4% {
+    opacity: 1;
+    transform: translate3d(1px, 0, 0);
+  }
+  96.6% {
+    opacity: 0.9;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.photo-marquee-track {
+  animation: void-marquee 38s linear infinite;
+}
+
+.photo-marquee-paused {
+  animation-play-state: paused;
+}
+
+.photo-marquee-paused .photo-strip-image {
+  animation-play-state: paused;
+}
+
+.photo-strip-image {
+  width: 52vw;
+  aspect-ratio: 4 / 5;
+  animation: photo-glitch 18s steps(1, end) infinite;
+}
+
+@media (min-width: 640px) {
+  .photo-strip-image {
+    width: 32vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .photo-strip-image {
+    width: 25vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .photo-strip-image {
+    width: 12.5vw;
+    aspect-ratio: 3 / 4;
+  }
+}
+
 .hero-still {
   position: absolute;
   inset: 0;
@@ -121,6 +179,23 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .photo-marquee-track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .photo-strip-group:first-child {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .photo-strip-image {
+    width: 50%;
+    flex: 0 0 50%;
+    animation: none;
+  }
+  .photo-strip-control {
+    display: none;
+  }
   .marquee-track {
     animation: none;
     width: auto;
@@ -133,5 +208,19 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+  .photo-strip-image {
+    width: 25%;
+    flex-basis: 25%;
+  }
+}
+
+@media (min-width: 1280px) and (prefers-reduced-motion: reduce) {
+  .photo-strip-image {
+    width: 12.5%;
+    flex-basis: 12.5%;
   }
 }
