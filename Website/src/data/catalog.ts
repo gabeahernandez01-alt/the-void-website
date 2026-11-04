@@ -27,6 +27,8 @@ export type EventRecord = {
   genres: string[];
   status: TicketStatus;
   ticketUrl?: string;
+  preregistrationUrl?: string;
+  ticketSaleNote?: LocaleText;
   priceMxn?: number;
   access?: LocaleText;
   summary: LocaleText;
@@ -508,6 +510,11 @@ gallery: [
     },
     genres: [],
     status: "confirmed",
+    preregistrationUrl: "https://forms.gle/v7pj62YvGTnBKPnC7",
+    ticketSaleNote: {
+      es: "Venta de boletos a partir del 7 de noviembre de 2026.",
+      en: "Tickets go on sale November 7, 2026.",
+    },
     summary: {
       es: "Una fecha que no será como las demás. No podemos revelar demasiado todavía; solo podemos decir que estamos preparando algo muy especial. Nos encontramos en lo desconocido.",
       en: "A date unlike the others. We cannot reveal too much yet; all we can say is that we are preparing something very special. We meet in the unknown.",

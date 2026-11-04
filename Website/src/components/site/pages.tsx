@@ -365,11 +365,25 @@ export function EventPage({ event }: { event: EventRecord }) {
               ))}
             </dl>
             {event.scheduleNote && <p className="mt-4 text-sm text-muted">{event.scheduleNote[lang]}</p>}
+            {event.ticketSaleNote && (
+              <p className="mt-4 font-mono text-xs uppercase tracking-widest text-acid">{event.ticketSaleNote[lang]}</p>
+            )}
             {event.priceMxn && status === "ended" && <p className="mt-2 text-sm text-muted">{t("priceNote")}</p>}
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               {canBuy && event.ticketUrl && (
                 <a className={buttonClass("solid")} href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
                   {t("tickets")}
+                  <ArrowUpRight aria-hidden="true" className="size-4" />
+                </a>
+              )}
+              {!canBuy && event.preregistrationUrl && (
+                <a
+                  className={buttonClass("solid")}
+                  href={event.preregistrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("preregister")}
                   <ArrowUpRight aria-hidden="true" className="size-4" />
                 </a>
               )}

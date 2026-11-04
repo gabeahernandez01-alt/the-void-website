@@ -101,10 +101,23 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
             ))}
           </ul>
         )}
+        {event.ticketSaleNote && (
+          <p className="font-mono text-xs uppercase tracking-widest text-acid">{event.ticketSaleNote[lang]}</p>
+        )}
         <div className="mt-2 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
           {canBuy && event.ticketUrl ? (
             <a className={buttonClass("solid", "w-full sm:w-auto")} href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
               {t("tickets")}
+              <ArrowUpRight aria-hidden="true" className="size-4" />
+            </a>
+          ) : event.preregistrationUrl ? (
+            <a
+              className={buttonClass("solid", "w-full sm:w-auto")}
+              href={event.preregistrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("preregister")}
               <ArrowUpRight aria-hidden="true" className="size-4" />
             </a>
           ) : (
