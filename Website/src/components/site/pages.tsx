@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ArchiveBrowser } from "@/components/site/archive-browser";
 import { Countdown, EventCard, StatusMark } from "@/components/site/event-card";
+import { EventGallery } from "@/components/site/event-gallery";
 import { buttonClass } from "@/components/ui/button";
 import { media, radio, youtubeUrl, type EventRecord, type MediaItem } from "@/data/catalog";
 import { VideoCard } from "@/components/site/radio";
@@ -382,25 +383,7 @@ export function EventPage({ event }: { event: EventRecord }) {
         </div>
         </article>
       {event.gallery && event.gallery.length > 0 && (
-        <section className="page-pad pb-16">
-          <p className="font-mono text-xs uppercase tracking-widest text-acid">
-            THE VØID / ARCHIVE
-          </p>
-          <h2 className="mt-2 mb-6 font-display text-4xl uppercase sm:text-5xl">
-            {lang === "es" ? "Galería" : "Gallery"}
-          </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {event.gallery.map((photo, index) => (
-              <img
-                key={photo}
-                src={photo}
-                alt={`${event.name} — ${lang === "es" ? "fotografía" : "photo"} ${index + 1}`}
-                loading="lazy"
-                className="aspect-[4/3] w-full border border-line object-cover"
-              />
-            ))}
-          </div>
-        </section>
+        <EventGallery eventName={event.name} lang={lang} photos={event.gallery} />
       )}
       {related.length > 0 && (
         <section className="page-pad pb-24">
