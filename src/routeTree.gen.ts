@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArchiveRouteImport } from './routes/archive'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HistoryRouteImport } from './routes/history'
+import { Route as MerchRouteImport } from './routes/merch'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SignalRouteImport } from './routes/signal'
 import { Route as TransmissionsRouteImport } from './routes/transmissions'
@@ -36,6 +37,11 @@ const ContactRoute = ContactRouteImport.update({
 const HistoryRoute = HistoryRouteImport.update({
   id: '/history',
   path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerchRoute = MerchRouteImport.update({
+  id: '/merch',
+  path: '/merch',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/archive': typeof ArchiveRoute
   '/contact': typeof ContactRoute
   '/history': typeof HistoryRoute
+  '/merch': typeof MerchRoute
   '/privacy': typeof PrivacyRoute
   '/signal': typeof SignalRoute
   '/transmissions': typeof TransmissionsRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/archive': typeof ArchiveRoute
   '/contact': typeof ContactRoute
   '/history': typeof HistoryRoute
+  '/merch': typeof MerchRoute
   '/privacy': typeof PrivacyRoute
   '/signal': typeof SignalRoute
   '/transmissions': typeof TransmissionsRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/archive': typeof ArchiveRoute
   '/contact': typeof ContactRoute
   '/history': typeof HistoryRoute
+  '/merch': typeof MerchRoute
   '/privacy': typeof PrivacyRoute
   '/signal': typeof SignalRoute
   '/transmissions': typeof TransmissionsRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/archive'
     | '/contact'
     | '/history'
+    | '/merch'
     | '/privacy'
     | '/signal'
     | '/transmissions'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/archive'
     | '/contact'
     | '/history'
+    | '/merch'
     | '/privacy'
     | '/signal'
     | '/transmissions'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/archive'
     | '/contact'
     | '/history'
+    | '/merch'
     | '/privacy'
     | '/signal'
     | '/transmissions'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   ArchiveRoute: typeof ArchiveRoute
   ContactRoute: typeof ContactRoute
   HistoryRoute: typeof HistoryRoute
+  MerchRoute: typeof MerchRoute
   PrivacyRoute: typeof PrivacyRoute
   SignalRoute: typeof SignalRoute
   TransmissionsRoute: typeof TransmissionsRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/history'
       fullPath: '/history'
       preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merch': {
+      id: '/merch'
+      path: '/merch'
+      fullPath: '/merch'
+      preLoaderRoute: typeof MerchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArchiveRoute: ArchiveRoute,
   ContactRoute: ContactRoute,
   HistoryRoute: HistoryRoute,
+  MerchRoute: MerchRoute,
   PrivacyRoute: PrivacyRoute,
   SignalRoute: SignalRoute,
   TransmissionsRoute: TransmissionsRoute,

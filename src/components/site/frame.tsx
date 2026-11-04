@@ -14,12 +14,13 @@ const LINES = [
   "CONNECTION ESTABLISHED",
 ];
 
-const NAV: { to: "/" | "/transmissions" | "/archive" | "/signal" | "/history" | "/contact"; key: CopyKey; exact?: boolean }[] = [
+const NAV: { to: "/" | "/transmissions" | "/archive" | "/signal" | "/history" | "/merch" | "/contact"; key: CopyKey; exact?: boolean }[] = [
   { to: "/", key: "navHome", exact: true },
   { to: "/transmissions", key: "navTransmissions" },
   { to: "/archive", key: "navArchive" },
   { to: "/signal", key: "navSignal" },
   { to: "/history", key: "navHistory" },
+  { to: "/merch", key: "navMerch" },
   { to: "/contact", key: "navContact" },
 ];
 
@@ -252,6 +253,9 @@ export function Frame({ children }: { children: React.ReactNode }) {
             <a className="min-h-11 text-fg hover:text-acid" href={facebookUrl} target="_blank" rel="noopener noreferrer">
               Facebook
             </a>
+            <Link to="/merch" className="min-h-11 text-fg hover:text-acid">
+              {t("navMerch")}
+            </Link>
             <Link to="/contact" className="min-h-11 text-fg hover:text-acid">
               {t("navContact")}
             </Link>

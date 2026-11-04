@@ -276,6 +276,27 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="page-pad border-t border-line py-16 xl:py-24">
+        <div className="grid gap-8 border border-line bg-dim md:grid-cols-2">
+          <div className="flex flex-col items-start justify-center p-6 sm:p-10">
+            <p className="font-mono text-xs uppercase tracking-widest text-acid">{t("merchHomeKicker")}</p>
+            <h2 className="mt-3 max-w-xl font-display text-5xl uppercase xl:text-7xl">{t("merchHomeTitle")}</h2>
+            <p className="mt-5 max-w-xl text-muted">{t("merchHomeBody")}</p>
+            <Link to="/merch" className={buttonClass("solid", "mt-7")}>
+              {t("merchHomeCta")}
+            </Link>
+          </div>
+          <img
+            src="/media/merch-anniversary-001.png"
+            alt={lang === "es" ? "Edición especial THE VØID 001 del primer aniversario" : "THE VØID 001 first-anniversary special edition"}
+            width={1536}
+            height={1024}
+            className="aspect-[3/2] h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       <section className="page-pad border-t border-line py-16 xl:py-28">
         <p className="font-mono text-xs uppercase tracking-widest text-acid">{t("joinKicker")}</p>
         <h2 className="mt-3 max-w-5xl font-display text-5xl uppercase xl:text-8xl">{t("joinTitle")}</h2>
