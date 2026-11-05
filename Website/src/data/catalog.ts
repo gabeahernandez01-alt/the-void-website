@@ -124,6 +124,7 @@ export const radio: RadioVideo[] = [
 export const analytics = {
   gaId: "",
   metaPixelId: "",
+  metricoolHash: "6eadededbd9dee25709c4781a470a58c",
 };
 
 export const soundGenres = [

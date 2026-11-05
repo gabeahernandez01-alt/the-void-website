@@ -4,6 +4,7 @@ import { useI18n } from "@/lib/i18n";
 
 const GA_ID = /^G-[A-Z0-9]+$/;
 const PIXEL_ID = /^\d{8,20}$/;
+const METRICOOL_HASH = /^[a-f0-9]{32}$/i;
 
 function safeGa() {
   return GA_ID.test(analytics.gaId) ? analytics.gaId : "";
@@ -13,9 +14,14 @@ function safePixel() {
   return PIXEL_ID.test(analytics.metaPixelId) ? analytics.metaPixelId : "";
 }
 
+function safeMetricool() {
+  return METRICOOL_HASH.test(analytics.metricoolHash) ? analytics.metricoolHash : "";
+}
+
 export function Consent() {
   const ga = safeGa();
   const pixel = safePixel();
+  const metricool = safeMetricool();
   const { lang } = useI18n();
   const [choice, setChoice] = useState<"unknown" | "granted" | "denied">("unknown");
 
@@ -43,9 +49,20 @@ export function Consent() {
       src.text = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',${JSON.stringify(pixel)});fbq('track','PageView');`;
       document.head.appendChild(src);
     }
-  }, [choice, ga, pixel]);
+    if (metricool && !document.getElementById("metricool-src")) {
+      const src = document.createElement("script");
+      src.id = "metricool-src";
+      src.async = true;
+      src.src = "https://tracker.metricool.com/resources/be.js";
+      src.onload = () => {
+        const tracker = (window as Window & { beTracker?: { t: (options: { hash: string }) => void } }).beTracker;
+        tracker?.t({ hash: metricool });
+      };
+      document.head.appendChild(src);
+    }
+  }, [choice, ga, pixel, metricool]);
 
-  if ((!ga && !pixel) || choice !== "unknown") return null;
+  if ((!ga && !pixel && !metricool) || choice !== "unknown") return null;
 
   const accept = () => {
     localStorage.setItem("void-consent", "granted");

@@ -282,13 +282,13 @@ export function PrivacyPage() {
       ? [
           "El idioma elegido se queda en este navegador. No es una cookie de rastreo.",
           "Los mensajes viajan a the.void.merida@gmail.com. Aquí no se archivan. Un campo oculto aparta los envíos automáticos.",
-          "No hay rastreadores encendidos. Si algún día se activan, primero se pedirá permiso.",
+          "La medición opcional de Metricool solo se activa si aceptas. Registra visitas y páginas vistas; detecta el país a partir de la IP y su etiqueta JavaScript no usa cookies.",
           "Instagram, TikTok, YouTube, Facebook y Resident Advisor tienen sus propias reglas al salir, o cuando un video empieza.",
         ]
       : [
           "The language you choose stays in this browser. It is not a tracking cookie.",
           "Messages travel to the.void.merida@gmail.com. Nothing is archived here. A hidden field turns automated submissions away.",
-          "No trackers are switched on. If they ever are, permission comes first.",
+          "Optional Metricool analytics runs only if you accept. It records visits and viewed pages, detects country from the IP address, and its JavaScript tag does not use cookies.",
           "Instagram, TikTok, YouTube, Facebook and Resident Advisor keep their own rules once you leave, or when a video starts.",
         ];
   return (
