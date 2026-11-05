@@ -35,6 +35,8 @@ export type EventRecord = {
   image?: string;
   imagePresentation?: "portrait";
   imageAlt?: LocaleText;
+  video?: string;
+  videoLabel?: LocaleText;
   links: EventLink[];
   age?: string;
   production?: string[];
@@ -505,6 +507,11 @@ gallery: [
     timeKnown: false,
     venue: "UNKNOWN",
     artists: [],
+    video: "/media/unknown-2026-promo.mp4",
+    videoLabel: {
+      es: "Video promocional del evento del 5 de diciembre.",
+      en: "Promo video for the December 5 event.",
+    },
     artistNote: {
       es: "Todavía no podemos revelar los nombres.",
       en: "We cannot reveal the names yet.",
