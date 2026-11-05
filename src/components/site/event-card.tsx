@@ -42,36 +42,56 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
 
   return (
     <article className={cn("group border border-line bg-dim", featured && "md:grid md:grid-cols-12")}>
-      <Link
-        to="/transmission/$eventId"
-        params={{ eventId: event.id }}
-        className={cn("relative block overflow-hidden", featured ? "md:col-span-6" : "")}
-      >
-        {event.image ? (
-          <img
-            src={event.image}
-            alt={event.imageAlt?.[lang] ?? ""}
-            width={1200}
-            height={1600}
-            className={cn(
-              "w-full motion-safe:transition-transform motion-safe:duration-500",
-              event.imagePresentation === "portrait"
-                ? "aspect-[2/3] bg-bg object-contain"
-                : "poster object-cover motion-safe:group-hover:scale-105",
-            )}
-            loading={featured ? "eager" : "lazy"}
-          />
-        ) : (
-          <div className="poster flex flex-col justify-between bg-surface p-5 sm:p-8">
-            <p className="font-mono text-xs uppercase tracking-widest text-acid">VØID_SYSTEM / TX</p>
-            <p className="font-display text-5xl uppercase sm:text-7xl">{event.name}</p>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted">{t("flyerPending")}</p>
-          </div>
-        )}
-        <span className="absolute left-3 top-3 bg-bg/80 px-2 py-1 font-mono text-xs tracking-widest text-acid">
-          {when.stamp}
-        </span>
-      </Link>
+      {event.video ? (
+        <div className={cn("relative overflow-hidden", featured && "md:col-span-6")}>
+          <video
+            aria-label={event.videoLabel?.[lang] ?? event.name}
+            controls
+            playsInline
+            preload="metadata"
+            width={1080}
+            height={1920}
+            className="block aspect-[9/16] w-full bg-bg object-contain"
+          >
+            <source src={event.video} type="video/mp4" />
+            {lang === "es" ? "Tu navegador no puede reproducir este video." : "Your browser cannot play this video."}
+          </video>
+          <span className="pointer-events-none absolute left-3 top-3 bg-bg/80 px-2 py-1 font-mono text-xs tracking-widest text-acid">
+            {when.stamp}
+          </span>
+        </div>
+      ) : (
+        <Link
+          to="/transmission/$eventId"
+          params={{ eventId: event.id }}
+          className={cn("relative block overflow-hidden", featured ? "md:col-span-6" : "")}
+        >
+          {event.image ? (
+            <img
+              src={event.image}
+              alt={event.imageAlt?.[lang] ?? ""}
+              width={1200}
+              height={1600}
+              className={cn(
+                "w-full motion-safe:transition-transform motion-safe:duration-500",
+                event.imagePresentation === "portrait"
+                  ? "aspect-[2/3] bg-bg object-contain"
+                  : "poster object-cover motion-safe:group-hover:scale-105",
+              )}
+              loading={featured ? "eager" : "lazy"}
+            />
+          ) : (
+            <div className="poster flex flex-col justify-between bg-surface p-5 sm:p-8">
+              <p className="font-mono text-xs uppercase tracking-widest text-acid">VØID_SYSTEM / TX</p>
+              <p className="font-display text-5xl uppercase sm:text-7xl">{event.name}</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-muted">{t("flyerPending")}</p>
+            </div>
+          )}
+          <span className="absolute left-3 top-3 bg-bg/80 px-2 py-1 font-mono text-xs tracking-widest text-acid">
+            {when.stamp}
+          </span>
+        </Link>
+      )}
       <div className={cn("flex flex-col gap-4 p-4 sm:p-6", featured && "md:col-span-6 md:justify-end md:p-8")}>
         <StatusMark event={event} />
         <div>

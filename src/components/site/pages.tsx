@@ -321,7 +321,20 @@ export function EventPage({ event }: { event: EventRecord }) {
           {t("back")}
         </Link>
         <div className="mt-6 grid gap-8 lg:grid-cols-12">
-          {event.image ? (
+          {event.video ? (
+            <video
+              aria-label={event.videoLabel?.[lang] ?? event.name}
+              controls
+              playsInline
+              preload="metadata"
+              width={1080}
+              height={1920}
+              className="aspect-[9/16] w-full bg-bg object-contain lg:col-span-5"
+            >
+              <source src={event.video} type="video/mp4" />
+              {lang === "es" ? "Tu navegador no puede reproducir este video." : "Your browser cannot play this video."}
+            </video>
+          ) : event.image ? (
             <img
               src={event.image}
               alt={event.imageAlt?.[lang] ?? ""}
