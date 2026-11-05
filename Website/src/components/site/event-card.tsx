@@ -43,22 +43,24 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
   return (
     <article className={cn("group border border-line bg-dim", featured && "md:grid md:grid-cols-12")}>
       {event.video ? (
-        <div className={cn("relative overflow-hidden", featured && "md:col-span-6")}>
-          <video
-            aria-label={event.videoLabel?.[lang] ?? event.name}
-            controls
-            playsInline
-            preload="metadata"
-            width={1080}
-            height={1920}
-            className="block aspect-[9/16] w-full bg-bg object-contain"
-          >
-            <source src={event.video} type="video/mp4" />
-            {lang === "es" ? "Tu navegador no puede reproducir este video." : "Your browser cannot play this video."}
-          </video>
-          <span className="pointer-events-none absolute left-3 top-3 bg-bg/80 px-2 py-1 font-mono text-xs tracking-widest text-acid">
-            {when.stamp}
-          </span>
+        <div className={cn("flex justify-center overflow-hidden bg-bg", featured && "md:col-span-6")}>
+          <div className="relative w-fit max-w-full">
+            <video
+              aria-label={event.videoLabel?.[lang] ?? event.name}
+              controls
+              playsInline
+              preload="metadata"
+              width={2160}
+              height={3840}
+              className="block h-auto max-h-[68svh] w-auto max-w-full object-contain"
+            >
+              <source src={event.video} type="video/mp4" />
+              {lang === "es" ? "Tu navegador no puede reproducir este video." : "Your browser cannot play this video."}
+            </video>
+            <span className="pointer-events-none absolute left-3 top-3 bg-bg/80 px-2 py-1 font-mono text-xs tracking-widest text-acid">
+              {when.stamp}
+            </span>
+          </div>
         </div>
       ) : (
         <Link

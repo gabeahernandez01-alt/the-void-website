@@ -323,18 +323,20 @@ export function EventPage({ event }: { event: EventRecord }) {
         </Link>
         <div className="mt-6 grid gap-8 lg:grid-cols-12">
           {event.video ? (
-            <video
-              aria-label={event.videoLabel?.[lang] ?? event.name}
-              controls
-              playsInline
-              preload="metadata"
-              width={1080}
-              height={1920}
-              className="aspect-[9/16] w-full bg-bg object-contain lg:col-span-5"
-            >
-              <source src={event.video} type="video/mp4" />
-              {lang === "es" ? "Tu navegador no puede reproducir este video." : "Your browser cannot play this video."}
-            </video>
+            <div className="flex justify-center lg:col-span-5">
+              <video
+                aria-label={event.videoLabel?.[lang] ?? event.name}
+                controls
+                playsInline
+                preload="metadata"
+                width={2160}
+                height={3840}
+                className="h-auto max-h-[68svh] w-auto max-w-full bg-bg object-contain"
+              >
+                <source src={event.video} type="video/mp4" />
+                {lang === "es" ? "Tu navegador no puede reproducir este video." : "Your browser cannot play this video."}
+              </video>
+            </div>
           ) : event.image ? (
             <img
               src={event.image}
