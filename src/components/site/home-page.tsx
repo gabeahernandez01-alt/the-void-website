@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { buttonClass } from "@/components/ui/button";
 import { Countdown, EventCard } from "@/components/site/event-card";
+import { EventMap } from "@/components/site/event-map";
 import { facebookUrl, instagramUrl, radio, soundGenres, tiktokUrl, youtubeUrl } from "@/data/catalog";
 import { VideoCard } from "@/components/site/radio";
 import { eventJsonLd, formatWhen, jsonScript, listArchive, listUpcoming } from "@/lib/events";
@@ -151,7 +152,12 @@ export function HomePage() {
       <section className="page-pad py-16 xl:py-24">
         {upcoming.length > 0 ? (
           <div className="grid gap-8">
-            {next && <EventCard event={next} featured />}
+            {next && (
+              <div className="grid gap-4">
+                <EventCard event={next} featured />
+                <EventMap event={next} />
+              </div>
+            )}
             {upcoming.slice(1, 2).map((event) => {
               const when = formatWhen(event.start, lang, event.timeKnown);
               return (
@@ -165,6 +171,7 @@ export function HomePage() {
                     </div>
                   </div>
                   <EventCard event={event} />
+                  <EventMap event={event} />
                 </div>
               );
             })}

@@ -27,6 +27,10 @@ export type EventRecord = {
   timeKnown: boolean;
   venue: string;
   address?: string;
+  /** Exact, public map search query. Omit until the venue is confirmed. */
+  mapQuery?: string;
+  /** Canonical venue map link, when the organizer provides one. */
+  mapUrl?: string;
   city?: string;
   artists: string[];
   artistNote?: LocaleText;
@@ -373,6 +377,7 @@ export const events: EventRecord[] = [
     timeKnown: true,
     venue: "Escenario Raventón · Ex-Teatro del Pueblo",
     address: "Ex-Teatro del Pueblo, Feria Internacional de Yucatán Xmatkuil",
+    mapQuery: "Ex-Teatro del Pueblo, Feria Internacional de Yucatán Xmatkuil, Yucatán, México",
     city: "Xmatkuil",
     artists: ["GABY SILVA", "MIKA", "BRI", "RUNTIME TERROR"],
     genres: [],
@@ -395,8 +400,10 @@ export const events: EventRecord[] = [
     name: "SHANTI CLASING — ALL NIGHT LONG",
     start: "2026-12-05T21:00:00-06:00",
     timeKnown: true,
-    venue: "Centro",
-    address: "Centro, Mérida, Yucatán",
+    venue: "Hostal Xooch",
+    address: "Calle 85 No. 491C, entre 54 y 56, Centro, Mérida",
+    mapQuery: "Hostal Xooch, Calle 85 No. 491C, entre 54 y 56, Centro, Mérida, Yucatán, México",
+    mapUrl: "https://maps.app.goo.gl/tyYTxgQ23hEEPTDu6",
     city: "Mérida",
     artists: ["SHANTI CLASING"],
     video: "/media/unknown-2026-flyer.mp4",
@@ -428,7 +435,7 @@ export const events: EventRecord[] = [
         { label: { es: "Formato", en: "Format" }, value: { es: "All Night Long", en: "All Night Long" } },
         { label: { es: "Fecha", en: "Date" }, value: { es: "Sábado 5 de diciembre de 2026", en: "Saturday, December 5, 2026" } },
         { label: { es: "Horario", en: "Time" }, value: { es: "9:00 PM", en: "9:00 PM" } },
-        { label: { es: "Ubicación", en: "Location" }, value: { es: "Centro, Mérida, Yucatán", en: "Centro, Mérida, Yucatán" } },
+        { label: { es: "Ubicación", en: "Location" }, value: { es: "Hostal Xooch, Calle 85 No. 491C, Mérida", en: "Hostal Xooch, Calle 85 No. 491C, Mérida" } },
         { label: { es: "Presentan", en: "Presented by" }, value: { es: "THE VØID x 100UNDERGROUND", en: "THE VØID x 100UNDERGROUND" } },
       ],
       closing: [

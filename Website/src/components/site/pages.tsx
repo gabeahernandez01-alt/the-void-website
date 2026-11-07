@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ArchiveBrowser } from "@/components/site/archive-browser";
 import { Countdown, EventCard, EventDescription, StatusMark } from "@/components/site/event-card";
+import { EventMap } from "@/components/site/event-map";
 import { EventGallery } from "@/components/site/event-gallery";
 import { buttonClass } from "@/components/ui/button";
 import { media, radio, youtubeUrl, type EventRecord, type MediaItem } from "@/data/catalog";
@@ -54,6 +55,7 @@ export function TransmissionsPage() {
                     </div>
                   </div>
                   <EventCard event={event} featured={index === 0} />
+                  <EventMap event={event} />
                 </section>
               );
             })}
