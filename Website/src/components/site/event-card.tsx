@@ -50,8 +50,8 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
               controls
               playsInline
               preload="metadata"
-              width={2160}
-              height={3840}
+              width={1440}
+              height={1800}
               className="block h-auto max-h-[68svh] w-auto max-w-full object-contain"
             >
               <source src={event.video} type="video/mp4" />

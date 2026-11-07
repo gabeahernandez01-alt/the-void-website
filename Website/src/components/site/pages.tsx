@@ -329,8 +329,8 @@ export function EventPage({ event }: { event: EventRecord }) {
                 controls
                 playsInline
                 preload="metadata"
-                width={2160}
-                height={3840}
+                width={1440}
+                height={1800}
                 className="h-auto max-h-[68svh] w-auto max-w-full bg-bg object-contain"
               >
                 <source src={event.video} type="video/mp4" />

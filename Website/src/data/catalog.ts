@@ -507,21 +507,21 @@ gallery: [
     timeKnown: false,
     venue: "UNKNOWN",
     artists: [],
-    video: "/media/unknown-2026-promo.mp4",
+    video: "/media/unknown-2026-flyer.mp4",
     videoLabel: {
-      es: "Video promocional del evento del 5 de diciembre.",
-      en: "Promo video for the December 5 event.",
+      es: "Flyer en video del evento del 5 de diciembre.",
+      en: "Video flyer for the December 5 event.",
     },
     artistNote: {
       es: "Todavía no podemos revelar los nombres.",
       en: "We cannot reveal the names yet.",
     },
     genres: [],
-    status: "confirmed",
-    preregistrationUrl: "https://forms.gle/v7pj62YvGTnBKPnC7",
+    status: "tickets",
+    ticketUrl: "https://shows.link/all-night-long/tickets",
     ticketSaleNote: {
-      es: "Venta de boletos a partir del 7 de noviembre de 2026.",
-      en: "Tickets go on sale November 7, 2026.",
+      es: "Boletos disponibles ahora.",
+      en: "Tickets are available now.",
     },
     summary: {
       es: "Una fecha que no será como las demás. No podemos revelar demasiado todavía; solo podemos decir que estamos preparando algo muy especial. Nos encontramos en lo desconocido.",
