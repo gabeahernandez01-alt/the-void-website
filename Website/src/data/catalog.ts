@@ -10,6 +10,13 @@ export type TicketStatus = "confirmed" | "tickets" | "limited" | "ended";
 export type LocaleText = { es: string; en: string };
 
 export type EventLink = { label: string; href: string };
+export type EventDescription = {
+  intro: LocaleText;
+  paragraphs: LocaleText[];
+  detailsHeading: LocaleText;
+  details: { label: LocaleText; value: LocaleText }[];
+  closing: LocaleText[];
+};
 
 export type EventRecord = {
   id: string;
@@ -31,6 +38,7 @@ export type EventRecord = {
   ticketSaleNote?: LocaleText;
   priceMxn?: number;
   access?: LocaleText;
+  description?: EventDescription;
   summary: LocaleText;
   image?: string;
   imagePresentation?: "portrait";
@@ -502,19 +510,17 @@ gallery: [
   },
   {
     id: "unknown-2026",
-    name: "UNKNOWN",
-    start: "2026-12-05T12:00:00-06:00",
-    timeKnown: false,
-    venue: "UNKNOWN",
-    artists: [],
+    name: "SHANTI CLASING — ALL NIGHT LONG",
+    start: "2026-12-05T21:00:00-06:00",
+    timeKnown: true,
+    venue: "Centro",
+    address: "Centro, Mérida, Yucatán",
+    city: "Mérida",
+    artists: ["SHANTI CLASING"],
     video: "/media/unknown-2026-flyer.mp4",
     videoLabel: {
-      es: "Flyer en video del evento del 5 de diciembre.",
-      en: "Video flyer for the December 5 event.",
-    },
-    artistNote: {
-      es: "Todavía no podemos revelar los nombres.",
-      en: "We cannot reveal the names yet.",
+      es: "Flyer en video de SHANTI CLASING — ALL NIGHT LONG, 5 de diciembre de 2026.",
+      en: "Video flyer for SHANTI CLASING — ALL NIGHT LONG on December 5, 2026.",
     },
     genres: [],
     status: "tickets",
@@ -523,9 +529,38 @@ gallery: [
       es: "Boletos disponibles ahora.",
       en: "Tickets are available now.",
     },
+    description: {
+      intro: {
+        es: "Por primera vez, THE VØID y 100UNDERGROUND unen fuerzas en Mérida para presentar una noche especial con **SHANTI CLASING**.",
+        en: "For the first time, THE VØID and 100UNDERGROUND join forces in Mérida to present a special night with **SHANTI CLASING**.",
+      },
+      paragraphs: [
+        {
+          es: "El próximo **5 de diciembre**, Shanti Clasing tomará el control de la cabina durante un formato **ALL NIGHT LONG**: una sesión extendida en la que la música evoluciona sin interrupciones, llevando la energía de la pista a través de un viaje sonoro de principio a fin.",
+          en: "On **December 5**, Shanti Clasing takes control of the booth for an **ALL NIGHT LONG** set: an extended session where the music evolves without interruption, carrying the dance floor’s energy through a sonic journey from beginning to end.",
+        },
+        {
+          es: "Esta fecha forma parte de **THE LAST DANCE — MÉXICO 2026**, una serie de presentaciones especiales que recorrerá distintas ciudades del país.",
+          en: "This date is part of **THE LAST DANCE — MÉXICO 2026**, a series of special performances traveling to cities across the country.",
+        },
+      ],
+      detailsHeading: { es: "INFORMACIÓN DEL EVENTO", en: "EVENT INFORMATION" },
+      details: [
+        { label: { es: "Artista", en: "Artist" }, value: { es: "Shanti Clasing", en: "Shanti Clasing" } },
+        { label: { es: "Formato", en: "Format" }, value: { es: "All Night Long", en: "All Night Long" } },
+        { label: { es: "Fecha", en: "Date" }, value: { es: "Sábado 5 de diciembre de 2026", en: "Saturday, December 5, 2026" } },
+        { label: { es: "Horario", en: "Time" }, value: { es: "9:00 PM", en: "9:00 PM" } },
+        { label: { es: "Ubicación", en: "Location" }, value: { es: "Centro, Mérida, Yucatán", en: "Centro, Mérida, Yucatán" } },
+        { label: { es: "Presentan", en: "Presented by" }, value: { es: "THE VØID x 100UNDERGROUND", en: "THE VØID x 100UNDERGROUND" } },
+      ],
+      closing: [
+        { es: "Una noche. Una artista. Sin interrupciones.", en: "One night. One artist. No interruptions." },
+        { es: "WE MEET IN THE UNKNOWN.", en: "WE MEET IN THE UNKNOWN." },
+      ],
+    },
     summary: {
-      es: "Una fecha que no será como las demás. No podemos revelar demasiado todavía; solo podemos decir que estamos preparando algo muy especial. Nos encontramos en lo desconocido.",
-      en: "A date unlike the others. We cannot reveal too much yet; all we can say is that we are preparing something very special. We meet in the unknown.",
+      es: "SHANTI CLASING toma la cabina en formato ALL NIGHT LONG. Una fecha de THE LAST DANCE — MÉXICO 2026, presentada por THE VØID x 100UNDERGROUND.",
+      en: "SHANTI CLASING takes over the booth for an ALL NIGHT LONG set. Part of THE LAST DANCE — MÉXICO 2026, presented by THE VØID x 100UNDERGROUND.",
     },
     links: [],
   },

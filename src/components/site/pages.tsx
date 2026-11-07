@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ArchiveBrowser } from "@/components/site/archive-browser";
-import { Countdown, EventCard, StatusMark } from "@/components/site/event-card";
+import { Countdown, EventCard, EventDescription, StatusMark } from "@/components/site/event-card";
 import { buttonClass } from "@/components/ui/button";
 import { media, radio, youtubeUrl, type EventRecord, type MediaItem } from "@/data/catalog";
 import { VideoCard } from "@/components/site/radio";
@@ -359,26 +359,34 @@ export function EventPage({ event }: { event: EventRecord }) {
           <div className="lg:col-span-7">
             <StatusMark event={event} />
             <h1 className="mt-3 font-display text-5xl uppercase sm:text-7xl">{event.name}</h1>
-            <p className="mt-4 max-w-xl text-muted">{event.summary[lang]}</p>
+            {event.description ? (
+              <EventDescription description={event.description} />
+            ) : (
+              <p className="mt-4 max-w-xl text-muted">{event.summary[lang]}</p>
+            )}
             {status !== "ended" && <div className="mt-6 max-w-md"><Countdown iso={event.start} /></div>}
-            <dl className="mt-8 grid gap-px bg-line sm:grid-cols-2">
-              {[
-                [t("when"), `${when.day}${when.time ? ` · ${when.time}` : ""}${end?.time ? ` — ${end.time}` : ""}`],
-                [t("venue"), event.address ?? event.venue],
-                [t("artists"), event.artists.length ? event.artists.join(" · ") : event.artistNote?.[lang] ?? "—"],
-                ...(event.genres.length ? [[t("genres"), event.genres.join(" · ")]] : []),
-                ...(event.access ? [[t("access"), event.access[lang]]] : []),
-                ...(event.age ? [[t("age"), event.age]] : []),
-                ...(event.production ? [[t("production"), event.production.join(" · ")]] : []),
-                ...(event.priceMxn ? [[t("price"), `MXN ${event.priceMxn}`]] : []),
-              ].map(([label, value]) => (
-                <div key={label} className="bg-bg p-4">
-                  <dt className="font-mono text-xs uppercase tracking-widest text-acid">{label}</dt>
-                  <dd className="mt-2 text-sm text-fg">{value}</dd>
-                </div>
-              ))}
-            </dl>
-            {event.scheduleNote && <p className="mt-4 text-sm text-muted">{event.scheduleNote[lang]}</p>}
+            {!event.description && (
+              <>
+                <dl className="mt-8 grid gap-px bg-line sm:grid-cols-2">
+                  {[
+                    [t("when"), `${when.day}${when.time ? ` · ${when.time}` : ""}${end?.time ? ` — ${end.time}` : ""}`],
+                    [t("venue"), event.address ?? event.venue],
+                    [t("artists"), event.artists.length ? event.artists.join(" · ") : event.artistNote?.[lang] ?? "—"],
+                    ...(event.genres.length ? [[t("genres"), event.genres.join(" · ")]] : []),
+                    ...(event.access ? [[t("access"), event.access[lang]]] : []),
+                    ...(event.age ? [[t("age"), event.age]] : []),
+                    ...(event.production ? [[t("production"), event.production.join(" · ")]] : []),
+                    ...(event.priceMxn ? [[t("price"), `MXN ${event.priceMxn}`]] : []),
+                  ].map(([label, value]) => (
+                    <div key={label} className="bg-bg p-4">
+                      <dt className="font-mono text-xs uppercase tracking-widest text-acid">{label}</dt>
+                      <dd className="mt-2 text-sm text-fg">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                {event.scheduleNote && <p className="mt-4 text-sm text-muted">{event.scheduleNote[lang]}</p>}
+              </>
+            )}
             {event.priceMxn && status === "ended" && <p className="mt-2 text-sm text-muted">{t("priceNote")}</p>}
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               {canBuy && event.ticketUrl && (

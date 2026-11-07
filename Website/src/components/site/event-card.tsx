@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import type { EventRecord } from "@/data/catalog";
+import type { EventDescription as EventDescriptionData, EventRecord } from "@/data/catalog";
 import { buttonClass } from "@/components/ui/button";
 import { displayStatus, formatWhen } from "@/lib/events";
 import { useI18n, type CopyKey } from "@/lib/i18n";
@@ -23,6 +23,50 @@ export function StatusMark({ event }: { event: EventRecord }) {
       <span className={cn("size-2", live ? "bg-acid" : "bg-muted")} aria-hidden="true" />
       <span className={live ? "text-acid" : "text-muted"}>{t(STATUS_KEY[status])}</span>
     </p>
+  );
+}
+
+function renderInlineEmphasis(content: string) {
+  return content.split(/(\*\*.+?\*\*)/g).map((part, index) => {
+    const emphasized = part.startsWith("**") && part.endsWith("**");
+    return emphasized ? (
+      <strong key={index} className="font-semibold text-fg">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      part
+    );
+  });
+}
+
+export function EventDescription({ description }: { description: EventDescriptionData }) {
+  const { lang } = useI18n();
+
+  return (
+    <div className="mt-5 max-w-2xl space-y-5 text-sm leading-relaxed text-muted sm:text-base">
+      <p>{renderInlineEmphasis(description.intro[lang])}</p>
+      {description.paragraphs.map((paragraph, index) => (
+        <p key={`paragraph-${index}`}>{renderInlineEmphasis(paragraph[lang])}</p>
+      ))}
+      <section aria-label={description.detailsHeading[lang]}>
+        <h2 className="font-mono text-xs uppercase tracking-widest text-acid">{description.detailsHeading[lang]}</h2>
+        <dl className="mt-3 grid gap-x-6 gap-y-4 sm:grid-cols-2">
+          {description.details.map((detail) => (
+            <div key={detail.label[lang]} className="border-l border-line pl-3">
+              <dt className="font-mono text-[10px] font-semibold uppercase tracking-widest text-acid">{detail.label[lang]}</dt>
+              <dd className="mt-1 text-sm text-fg">{detail.value[lang]}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+      <div className="space-y-1 border-t border-line pt-4 text-fg">
+        {description.closing.map((line, index) => (
+          <p key={`closing-${index}`} className={index === 0 ? "font-display text-xl uppercase" : "font-mono text-xs tracking-widest"}>
+            {line[lang]}
+          </p>
+        ))}
+      </div>
+    </div>
   );
 }
 
