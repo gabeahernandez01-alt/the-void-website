@@ -14,11 +14,13 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "THE VØID — hard techno, schranz, industrial, hard bounce y hard groove en Mérida, Yucatán. Transmisiones, archivo y señal.",
+          "THE VØID: techno underground en Mérida, Yucatán. Eventos y transmisiones de hard techno, schranz, industrial, hard bounce y hard groove.",
       },
       { name: "theme-color", content: "#070807" },
     ],
     links: [
+      { rel: "icon", type: "image/x-portable-pixmap", href: "/favicon.ppm", sizes: "96x96" },
+      { rel: "icon", type: "image/png", href: "/favicon-96.png", sizes: "96x96" },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
