@@ -138,11 +138,138 @@ export const analytics = {
 };
 
 export const soundGenres = [
-  "HARD TECHNO",
-  "SCHRANZ",
-  "INDUSTRIAL",
-  "HARD BOUNCE",
-  "HARD GROOVE",
+  {
+    id: "hard-techno",
+    name: "HARD TECHNO",
+    es: {
+      definition: "Techno de bombo frontal y energía sostenida; mantiene la pista bajo presión con percusión firme y texturas contundentes.",
+      difference: "Es el territorio más amplio: puede sumar melodía, tensión o recursos rave sin depender de un loop saturado.",
+    },
+    en: {
+      definition: "Techno built around a forceful kick and sustained energy, keeping pressure on the floor with firm percussion and weighty textures.",
+      difference: "It is the broadest lane here: it can use melody, tension or rave accents without relying on a saturated loop.",
+    },
+  },
+  {
+    id: "schranz",
+    name: "SCHRANZ",
+    es: {
+      definition: "Vertiente alemana del techno duro asociada a Frankfurt en los años noventa: percusión repetida, áspera y muy saturada.",
+      difference: "Su sello es el loop denso y machacante; el hard techno puede variar más la textura y el fraseo.",
+    },
+    en: {
+      definition: "A German hard-techno strain associated with Frankfurt in the 1990s, built from repeated, rough and heavily saturated percussion.",
+      difference: "Its signature is a dense, grinding loop; hard techno can vary its texture and phrasing more widely.",
+    },
+  },
+  {
+    id: "industrial",
+    name: "INDUSTRIAL",
+    es: {
+      definition: "Techno de timbres metálicos, ruido, distorsión y percusión que evoca máquinas y espacios duros.",
+      difference: "Describe sobre todo la textura y la atmósfera, no una velocidad fija ni un único patrón de bombo.",
+    },
+    en: {
+      definition: "Techno shaped by metallic timbres, noise, distortion and percussion that suggests machinery and hard spaces.",
+      difference: "It describes texture and atmosphere more than a fixed tempo or one specific kick pattern.",
+    },
+  },
+  {
+    id: "hard-bounce",
+    name: "HARD BOUNCE",
+    es: {
+      definition: "Techno duro emparentado con el hard house, reconocible por un bajo a contratiempo y una energía elástica.",
+      difference: "Donde el hard techno suele avanzar con un empuje más recto, el hard bounce enfatiza el rebote del bajo.",
+    },
+    en: {
+      definition: "Hard-edged techno with roots in hard house, known for an offbeat bassline and elastic energy.",
+      difference: "Where hard techno often drives straight ahead, hard bounce puts more weight on bass bounce.",
+    },
+  },
+  {
+    id: "hard-groove",
+    name: "HARD GROOVE",
+    es: {
+      definition: "Techno rítmico de percusión sincopada, swing y capas rodantes que sostienen el movimiento.",
+      difference: "Su motor es el patrón percusivo y el groove; no necesita la distorsión ni el peso constante del schranz.",
+    },
+    en: {
+      definition: "Rhythm-led techno with syncopated percussion, swing and rolling layers that keep the body moving.",
+      difference: "Its engine is the percussion pattern and groove; it does not need schranz's distortion or constant weight.",
+    },
+  },
+  {
+    id: "hypnotic-techno",
+    name: "HYPNOTIC TECHNO",
+    es: {
+      definition: "Loops persistentes y pequeños cambios de textura crean una tensión inmersiva y envolvente.",
+      difference: "La sensación nace de la repetición y el detalle gradual, no de grandes subidas o golpes sorpresa.",
+    },
+    en: {
+      definition: "Persistent loops and subtle textural shifts build immersive, absorbing tension.",
+      difference: "Its pull comes from repetition and gradual detail, not big builds or surprise drops.",
+    },
+  },
+  {
+    id: "detroit-techno",
+    name: "DETROIT TECHNO",
+    es: {
+      definition: "Linaje nacido en Detroit de pioneros negros que cruzaron futurismo electrónico con funk, electro y ritmos de máquina.",
+      difference: "Su identidad está en ese origen y en el diálogo entre máquina, funk y futuro; no en ser simplemente más duro u oscuro.",
+    },
+    en: {
+      definition: "A Detroit-born lineage created by Black pioneers, joining electronic futurism with funk, electro and machine rhythms.",
+      difference: "Its identity comes from that history and the exchange between machine, funk and future, not simply from being harder or darker.",
+    },
+  },
+  {
+    id: "raw-techno",
+    name: "RAW TECHNO",
+    es: {
+      definition: "Techno de bordes ásperos y producción poco pulida, con pocos elementos y loops al frente.",
+      difference: "“Raw” es una etiqueta flexible, no una receta única: puede cruzarse con lo industrial, lo hipnótico o lo duro.",
+    },
+    en: {
+      definition: "Rough-edged, less-polished techno that puts a small number of elements and loops up front.",
+      difference: "“Raw” is a flexible label, not one fixed recipe; it can overlap with industrial, hypnotic or hard techno.",
+    },
+  },
+  {
+    id: "bochka",
+    name: "BOCHKA",
+    es: {
+      definition: "Término de uso variable para techno duro guiado por un bombo redondo, grave y persistente; бо́чка significa “barril” en ruso.",
+      difference: "Aquí el foco es el golpe pesado y redondo del bombo; schranz suele reconocerse más por sus loops de percusión saturados.",
+    },
+    en: {
+      definition: "A loosely used term for hard techno led by a round, weighty, persistent kick; бо́чка means “barrel” in Russian.",
+      difference: "Here the focus is the kick's heavy, rounded thump; schranz is more often recognized by saturated percussion loops.",
+    },
+  },
+  {
+    id: "acid-techno",
+    name: "ACID TECHNO",
+    es: {
+      definition: "Techno atravesado por líneas resonantes y cambiantes de bajo ácido, inspiradas en el sonido del Roland TB-303.",
+      difference: "Su firma es una línea de sintetizador que se retuerce y evoluciona; no solo el ruido industrial ni la fuerza del bombo.",
+    },
+    en: {
+      definition: "Techno threaded with resonant, shifting acid-bass lines inspired by the sound of the Roland TB-303.",
+      difference: "Its signature is an evolving, squelching synth line, rather than industrial noise or kick weight alone.",
+    },
+  },
+  {
+    id: "tribal-techno",
+    name: "TRIBAL TECHNO",
+    es: {
+      definition: "Una vertiente donde capas de percusión sincopada y polirrítmica toman el primer plano sobre el pulso constante del techno.",
+      difference: "Comparte energía rítmica con el hard groove, pero destaca más la conversación entre capas de percusión.",
+    },
+    en: {
+      definition: "A strain where syncopated, polyrhythmic percussion layers move to the foreground over techno's steady pulse.",
+      difference: "It shares rhythmic energy with hard groove, while putting more focus on interplay between percussion layers.",
+    },
+  },
 ] as const;
 
 export const events: EventRecord[] = [

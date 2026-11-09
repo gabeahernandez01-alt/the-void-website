@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { buttonClass } from "@/components/ui/button";
 import { Countdown, EventCard } from "@/components/site/event-card";
@@ -42,11 +43,14 @@ function Waveform() {
 
 export function HomePage() {
   const { t, lang } = useI18n();
+  const [selectedGenreId, setSelectedGenreId] = useState<string>(soundGenres[0].id);
   useDocTitle(t("homeTitle"));
   const upcoming = listUpcoming();
   const next = upcoming[0];
   const recent = listArchive().slice(0, 4);
   const nextWhen = next ? formatWhen(next.start, lang, next.timeKnown) : null;
+  const selectedGenre = soundGenres.find((genre) => genre.id === selectedGenreId) ?? soundGenres[0];
+  const selectedGenreIndex = soundGenres.findIndex((genre) => genre.id === selectedGenre.id) + 1;
   const org = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -223,8 +227,8 @@ export function HomePage() {
             {[0, 1].map((copy) => (
               <p key={copy} className={copy === 1 ? "flex motion-reduce:hidden" : "flex"} aria-hidden={copy === 1}>
                 {soundGenres.map((genre) => (
-                  <span key={`${genre}-${copy}`} className="flex items-center gap-6 px-3 py-5 font-display text-4xl uppercase sm:text-6xl">
-                    {genre}
+                  <span key={`${genre.id}-${copy}`} className="flex items-center gap-6 px-3 py-5 font-display text-4xl uppercase sm:text-6xl">
+                    {genre.name}
                     <span className="text-acid">/</span>
                   </span>
                 ))}
@@ -242,11 +246,44 @@ export function HomePage() {
             <Waveform />
             <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {soundGenres.map((genre) => (
-                <li key={genre} className="border border-line px-3 py-3 font-mono text-xs uppercase tracking-widest">
-                  {genre}
+                <li key={genre.id}>
+                  <button
+                    type="button"
+                    aria-pressed={selectedGenre.id === genre.id}
+                    onClick={() => setSelectedGenreId(genre.id)}
+                    className={cn(
+                      "flex min-h-12 w-full items-center justify-between gap-3 border px-3 py-3 text-left font-mono text-xs uppercase tracking-widest transition-colors",
+                      selectedGenre.id === genre.id
+                        ? "border-acid bg-acid text-bg"
+                        : "border-line bg-bg hover:border-fg hover:bg-dim",
+                    )}
+                  >
+                    {genre.name}
+                  </button>
                 </li>
               ))}
             </ul>
+            <div className="border border-line bg-dim p-4 sm:p-5" aria-live="polite" aria-atomic="true">
+              <div className="mb-5 flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-widest text-acid">{t("soundGenreInstruction")}</p>
+                  <h3 className="mt-2 font-display text-3xl uppercase sm:text-4xl">{selectedGenre.name}</h3>
+                </div>
+                <span className="pt-1 font-mono text-xs text-muted">
+                  {String(selectedGenreIndex).padStart(2, "0")} / {String(soundGenres.length).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-widest text-acid">{t("soundGenreDefinition")}</p>
+                  <p className="mt-2 text-sm text-muted">{selectedGenre[lang].definition}</p>
+                </div>
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-widest text-acid">{t("soundGenreDifference")}</p>
+                  <p className="mt-2 text-sm text-muted">{selectedGenre[lang].difference}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
