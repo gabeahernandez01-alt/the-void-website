@@ -10,13 +10,13 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "THE VØID — Mérida" },
-      {
-        name: "description",
-        content:
-          "THE VØID — hard techno, schranz, industrial, hard bounce y hard groove en Mérida, Yucatán. Transmisiones, archivo y señal.",
-      },
       { name: "theme-color", content: "#070807" },
+      { property: "og:site_name", content: "THE VØID" },
+      { property: "og:image", content: "https://www.thevoid.com.mx/og.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.thevoid.com.mx/og.jpg" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/The%20VOID%20simbolo-01.png" },
