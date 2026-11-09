@@ -175,6 +175,18 @@ export const soundGenres = [
     },
   },
   {
+    id: "dark-techno",
+    name: "DARK TECHNO",
+    es: {
+      definition: "Etiqueta estética flexible para techno de atmósfera sombría y tensa, con graves profundos y capas espaciales.",
+      difference: "Describe sobre todo el clima: puede cruzarse con lo industrial, raw o hipnótico, sin exigir una percusión o textura concreta.",
+    },
+    en: {
+      definition: "A flexible aesthetic label for techno with a shadowy, tense atmosphere, deep low end and spacious layers.",
+      difference: "It describes the mood: it can overlap with industrial, raw or hypnotic techno without requiring one specific rhythm or texture.",
+    },
+  },
+  {
     id: "hard-bounce",
     name: "HARD BOUNCE",
     es: {
