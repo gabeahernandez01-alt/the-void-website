@@ -523,7 +523,6 @@ export const events: EventRecord[] = [
     status: "confirmed",
     access: { es: "Gratuito", en: "Free entry" },
     image: "/media/xmatkuil-2026.jpg",
-    imagePresentation: "portrait",
     imageAlt: {
       es: "Flyer de THE VØID en el escenario Raventón, Ex-Teatro del Pueblo, Feria de Xmatkuil; 14 de noviembre a las 9 p. m., con Gaby Silva, MIKA, BRI y Runtime Terror.",
       en: "THE VØID flyer for the Raventón stage at Ex-Teatro del Pueblo, Xmatkuil Fair; 14 November at 9 p.m., with Gaby Silva, MIKA, BRI and Runtime Terror.",
