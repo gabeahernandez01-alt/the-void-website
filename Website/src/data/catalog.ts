@@ -641,10 +641,9 @@ gallery: [
     status: "confirmed",
     access: { es: "Gratuito", en: "Free entry" },
     image: "/media/xmatkuil-2026.jpg",
-    imagePresentation: "portrait",
     imageAlt: {
-      es: "Flyer de THE VØID en el escenario Raventón, Ex-Teatro del Pueblo, Feria de Xmatkuil; 14 de noviembre a las 9 p. m., con Gaby Silva, MIKA, BRI y Runtime Terror.",
-      en: "THE VØID flyer for the Raventón stage at Ex-Teatro del Pueblo, Xmatkuil Fair; 14 November at 9 p.m., with Gaby Silva, MIKA, BRI and Runtime Terror.",
+      es: "THE VØID toca en el escenario Raventón de la Feria de Xmatkuil; Gaby Silva y MIKA en la cabina, ante el público.",
+      en: "THE VØID plays the Raventón stage at the Xmatkuil Fair; Gaby Silva and MIKA at the decks before the crowd.",
     },
     summary: {
       es: "Una transmisión abierta para todos. THE VØID llega a la Feria Internacional de Yucatán en Xmatkuil. Entrada gratuita.",

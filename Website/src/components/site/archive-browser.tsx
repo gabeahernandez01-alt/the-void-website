@@ -104,7 +104,7 @@ export function ArchiveBrowser({ events }: { events: EventRecord[] }) {
       {filtered.length === 0 ? (
         <p className="mt-8 border border-line p-6 text-muted">{t("noResults")}</p>
       ) : (
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+        <div className="mt-4 grid gap-4 lg:grid-cols-2 lg:items-start">
           {filtered.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
