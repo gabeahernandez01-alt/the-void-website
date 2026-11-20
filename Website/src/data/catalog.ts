@@ -45,7 +45,7 @@ export type EventRecord = {
   description?: EventDescription;
   summary: LocaleText;
   image?: string;
-  imagePresentation?: "portrait";
+  imagePresentation?: "portrait" | "flyer";
   imageAlt?: LocaleText;
   video?: string;
   videoLabel?: LocaleText;
@@ -656,6 +656,7 @@ gallery: [
     id: "unknown-2026",
     name: "SHANTI CLASING — ALL NIGHT LONG",
     start: "2026-12-05T21:00:00-06:00",
+    end: "2026-12-06T03:00:00-06:00",
     timeKnown: true,
     venue: "Hostal Xooch",
     address: "Calle 85 No. 491C, entre 54 y 56, Centro, Mérida",
@@ -663,10 +664,11 @@ gallery: [
     mapUrl: "https://maps.app.goo.gl/tyYTxgQ23hEEPTDu6",
     city: "Mérida",
     artists: ["SHANTI CLASING"],
-    video: "/media/unknown-2026-flyer.mp4",
-    videoLabel: {
-      es: "Flyer en video de SHANTI CLASING — ALL NIGHT LONG, 5 de diciembre de 2026.",
-      en: "Video flyer for SHANTI CLASING — ALL NIGHT LONG on December 5, 2026.",
+    image: "/media/events/shanti-clasing-all-night-long-2026.png",
+    imagePresentation: "flyer",
+    imageAlt: {
+      es: "Flyer oficial de SHANTI CLASING — ALL NIGHT LONG, THE VØID x 100UNDERGROUND, 5 de diciembre de 2026 en Mérida.",
+      en: "Official flyer for SHANTI CLASING — ALL NIGHT LONG, THE VØID x 100UNDERGROUND, December 5, 2026 in Mérida.",
     },
     genres: [],
     status: "tickets",

@@ -19,6 +19,7 @@ export function meridaKey(date: Date) {
 }
 
 export function isEnded(event: EventRecord, now = new Date()) {
+  if (event.end) return new Date(event.end) < now;
   return meridaKey(new Date(event.start)) < meridaKey(now);
 }
 
@@ -103,10 +104,12 @@ export function eventJsonLd(event: EventRecord) {
     organizer: {
       "@type": "Organization",
       name: "THE VØID",
+      url: "https://www.thevoid.com.mx/",
       sameAs: [instagramUrl, tiktokUrl, youtubeUrl, facebookUrl],
     },
   };
   if (event.end) data.endDate = event.end;
+  if (event.image) data.image = new URL(event.image, "https://www.thevoid.com.mx").toString();
   if (event.artists.length > 0) {
     data.performer = event.artists.map((name) => ({ "@type": "Person", name }));
   }

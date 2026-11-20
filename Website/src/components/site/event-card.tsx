@@ -73,6 +73,8 @@ export function EventDescription({ description }: { description: EventDescriptio
 export function EventCard({ event, featured = false }: { event: EventRecord; featured?: boolean }) {
   const { t, lang } = useI18n();
   const when = formatWhen(event.start, lang, event.timeKnown);
+  const end = event.end ? formatWhen(event.end, lang, true) : null;
+  const endTime = end ? ` — ${end.day !== when.day ? `${end.day} · ` : ""}${end.time ?? ""}` : "";
   const status = displayStatus(event);
   const canBuy = Boolean(event.ticketUrl) && status !== "ended";
   const hint = event.ticketUrl?.includes("instagram.com")
@@ -120,7 +122,9 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
               height={1600}
               className={cn(
                 "w-full motion-safe:transition-transform motion-safe:duration-500",
-                event.imagePresentation === "portrait"
+                event.imagePresentation === "flyer"
+                  ? "aspect-[4/5] bg-bg object-contain"
+                  : event.imagePresentation === "portrait"
                   ? "aspect-[2/3] bg-bg object-contain"
                   : "poster object-cover motion-safe:group-hover:scale-105",
               )}
@@ -147,7 +151,7 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
             </Link>
           </h2>
           <p className="mt-3 font-mono text-xs uppercase tracking-widest text-muted">
-            {when.day}{when.time ? ` · ${when.time}` : ""} · {location}
+            {when.day}{when.time ? ` · ${when.time}` : ""}{endTime} · {location}
           </p>
         </div>
         <p className="max-w-xl text-sm text-muted">{event.summary[lang]}</p>

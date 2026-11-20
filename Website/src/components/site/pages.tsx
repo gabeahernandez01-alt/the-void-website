@@ -312,6 +312,7 @@ export function EventPage({ event }: { event: EventRecord }) {
   useDocTitle(`${event.name} — THE VØID`);
   const when = formatWhen(event.start, lang, event.timeKnown);
   const end = event.end ? formatWhen(event.end, lang, true) : null;
+  const whenText = `${when.day}${when.time ? ` · ${when.time}` : ""}${end ? ` — ${end.day !== when.day ? `${end.day} · ` : ""}${end.time ?? ""}` : ""}`;
   const status = displayStatus(event);
   const canBuy = Boolean(event.ticketUrl) && status !== "ended";
   const related = [...listUpcoming(), ...listArchive()].filter((item) => item.id !== event.id).slice(0, 2);
@@ -347,9 +348,11 @@ export function EventPage({ event }: { event: EventRecord }) {
               height={1600}
               className={cn(
                 "w-full lg:col-span-5",
-                event.imagePresentation === "portrait"
-                  ? "aspect-[2/3] bg-bg object-contain"
-                  : "poster object-cover",
+                event.imagePresentation === "flyer"
+                  ? "aspect-[4/5] bg-bg object-contain"
+                  : event.imagePresentation === "portrait"
+                    ? "aspect-[2/3] bg-bg object-contain"
+                    : "poster object-cover",
               )}
             />
           ) : (
@@ -372,7 +375,7 @@ export function EventPage({ event }: { event: EventRecord }) {
               <>
                 <dl className="mt-8 grid gap-px bg-line sm:grid-cols-2">
                   {[
-                    [t("when"), `${when.day}${when.time ? ` · ${when.time}` : ""}${end?.time ? ` — ${end.time}` : ""}`],
+                    [t("when"), whenText],
                     [t("venue"), event.address ?? event.venue],
                     [t("artists"), event.artists.length ? event.artists.join(" · ") : event.artistNote?.[lang] ?? "—"],
                     ...(event.genres.length ? [[t("genres"), event.genres.join(" · ")]] : []),
