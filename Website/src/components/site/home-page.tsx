@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Pause, Play } from "lucide-react";
 import { buttonClass } from "@/components/ui/button";
+import { EventActions } from "@/components/site/event-actions";
 import { Countdown, EventCard } from "@/components/site/event-card";
 import { EventMap } from "@/components/site/event-map";
 import { facebookUrl, instagramUrl, radio, soundGenres, tiktokUrl, youtubeUrl } from "@/data/catalog";
@@ -131,6 +132,7 @@ export function HomePage() {
                   {t("tickets")}
                 </a>
               )}
+              <EventActions event={next} className="mt-4" />
             </aside>
           )}
         </div>

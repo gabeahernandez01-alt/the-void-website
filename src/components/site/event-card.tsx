@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { EventActions } from "@/components/site/event-actions";
 import type { EventDescription as EventDescriptionData, EventRecord } from "@/data/catalog";
 import { buttonClass } from "@/components/ui/button";
 import { displayStatus, formatWhen } from "@/lib/events";
@@ -184,6 +185,7 @@ export function EventCard({ event, featured = false }: { event: EventRecord; fea
           )}
           {canBuy && hint && <p className="font-mono text-xs uppercase tracking-widest text-muted">{hint}</p>}
         </div>
+        <EventActions event={event} />
       </div>
     </article>
   );

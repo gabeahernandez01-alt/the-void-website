@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ArchiveBrowser } from "@/components/site/archive-browser";
+import { EventActions } from "@/components/site/event-actions";
 import { Countdown, EventCard, EventDescription, StatusMark } from "@/components/site/event-card";
 import { EventMap } from "@/components/site/event-map";
 import { buttonClass } from "@/components/ui/button";
@@ -29,8 +30,8 @@ export function TransmissionsPage() {
   const next = upcoming[0];
   const lede =
     lang === "es"
-      ? "Dos fechas. Dos transmisiones distintas. La señal ya tiene nuevas coordenadas. Guarda las fechas: lo que viene apenas comienza."
-      : "Two dates. Two different transmissions. The signal has new coordinates. Save the dates. What comes next is only the beginning.";
+      ? "La próxima transmisión ya tiene nuevas coordenadas. Guarda la fecha: lo que viene apenas comienza."
+      : "The next transmission has new coordinates. Save the date. What comes next is only the beginning.";
 
   return (
     <>
@@ -403,6 +404,7 @@ export function EventPage({ event }: { event: EventRecord }) {
                 </a>
               ))}
             </div>
+            <EventActions event={event} className="mt-3" />
           </div>
         </div>
       </article>
